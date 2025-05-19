@@ -25,22 +25,6 @@ Framework: Laravel Breeze (untuk autentikasi)
 
 API: WhatsApp API (untuk notifikasi)
 
-📂 Struktur Proyek
-📁 simanggi/
-├── app/
-├── bootstrap/
-├── config/
-├── database/
-├── public/
-├── resources/
-│   ├── views/
-│   └── css/
-├── routes/
-│   └── web.php
-├── storage/
-├── tests/
-└── .env
-⚙️ Instalasi
 Clone repository ini:
 
 git clone https://github.com/username/simanggi.git
@@ -78,17 +62,15 @@ Pastikan database simanggi_db sudah dibuat dan konfigurasi .env sudah sesuai seb
 Menggunakan Laravel Breeze untuk sistem login dan register dengan role Admin dan User.
 
 👥 Tim Pengembang
-Adib Muhammad Zain (Project Manager)
+Adib Muhammad Zain (Fullstack Web Developer)
 
-Muhammad Aqil Siraj (Backend Developer)
+Aditya Ega Pratama (Server Enginer)
 
-Mochammad Taufikurrahman (Frontend Developer)
+Adrian Fakhriza Hakim (Backend Developer)
 
-Ifan Yusanda (Database Administrator)
+Najlaa Maharani Dewi (UI/UX Designer)
 
-Kholiqin Abadi (UI/UX Designer)
-
-M. Suhedek (Tester & Quality Assurance)
+Muhamad Efendi Vivria (Tester & Quality Assurance)
 
 📬 Kontak
 Jika ada pertanyaan atau masalah, silakan hubungi tim pengembang melalui:
