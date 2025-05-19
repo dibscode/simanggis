@@ -1,5 +1,30 @@
-Simanggi - Sistem Monitoring Makan Gratis
-Simanggi adalah sistem monitoring untuk program makan gratis yang dirancang untuk memudahkan pengelolaan dan pemantauan distribusi makanan gratis secara efisien. Sistem ini membantu memastikan setiap penerima mendapatkan makanan sesuai dengan alokasi yang ditentukan.
+<p align="center">
+    <img src="/logo-title.png" width="150" alt="Project Logo">
+</p>
+
+<h1 align="center" style="font-size: 3em; font-weight: bold;">Simanggis - Sistem Monitoring Makan Gratis</h1>
+
+<p align="center" style="font-size: 1.2em;">
+    Simanggis adalah sistem monitoring untuk program makan gratis yang dirancang untuk memudahkan pengelolaan dan pemantauan distribusi makanan gratis secara efisien. Sistem ini membantu memastikan setiap penerima mendapatkan makanan sesuai dengan alokasi yang ditentukan.
+</p>
+
+<p align="center">
+    <a href="https://github.com/AdrianFakhriza" target="_blank">
+        <img src="https://img.shields.io/github/license/username/repository-name?style=flat-square" alt="License">
+    </a>
+    <a href="https://github.com/dibscode" target="_blank">
+        <img src="https://img.shields.io/github/issues/username/repository-name?style=flat-square" alt="Issues">
+    </a>
+    <a href="https://github.com/egaprams" target="_blank">
+        <img src="https://img.shields.io/github/issues-pr/username/repository-name?style=flat-square" alt="Pull Requests">
+    </a>
+    <a href="https://github.com/muhamadpendi10" target="_blank">
+        <img src="https://img.shields.io/github/issues-pr/username/repository-name?style=flat-square" alt="Pull Requests">
+    </a>
+    <a href="https://github.com/najlamhr" target="_blank">
+        <img src="https://img.shields.io/github/issues-pr/username/repository-name?style=flat-square" alt="Pull Requests">
+    </a>
+</p>
 
 🚀 Fitur Utama
 Manajemen data penerima manfaat
