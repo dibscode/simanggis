@@ -10,19 +10,19 @@
 
 <p align="center">
     <a href="https://github.com/AdrianFakhriza" target="_blank">
-        <img src="https://img.shields.io/github/license/username/repository-name?style=flat-square" alt="License">
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="logo-github">
     </a>
     <a href="https://github.com/dibscode" target="_blank">
-        <img src="https://img.shields.io/github/issues/username/repository-name?style=flat-square" alt="Issues">
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="logo-github">
     </a>
     <a href="https://github.com/egaprams" target="_blank">
-        <img src="https://img.shields.io/github/issues-pr/username/repository-name?style=flat-square" alt="Pull Requests">
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="logo-github">
     </a>
     <a href="https://github.com/muhamadpendi10" target="_blank">
-        <img src="https://img.shields.io/github/issues-pr/username/repository-name?style=flat-square" alt="Pull Requests">
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="logo-github">
     </a>
     <a href="https://github.com/najlamhr" target="_blank">
-        <img src="https://img.shields.io/github/issues-pr/username/repository-name?style=flat-square" alt="Pull Requests">
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="logo-github">
     </a>
 </p>
 
