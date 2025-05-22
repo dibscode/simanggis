@@ -19,9 +19,33 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+        // Mengambil semua data user + feedback yang pernah mereka buat
+    public static function getAllData()
+    {
+        return self::with('feedbacks')->get();
+    }
+
+
     public function feedbacks()
     {
-        return $this->hasMany(Feedback::class);
+        return $this->hasMany(Feedback::class, 'user_id');
+    }
+
+    // Cek role
+    public function isAdmin()
+    {
+        return $this->role === 'admin';
+    }
+
+    public function isOperator()
+    {
+        return $this->role === 'operator';
+    }
+
+    // Total feedback yang sudah dikirimkan
+    public function feedbackCount()
+    {
+        return $this->feedbacks()->count();
     }
 }
 
