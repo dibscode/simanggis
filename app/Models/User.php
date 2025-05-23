@@ -25,6 +25,11 @@ class User extends Authenticatable
         return self::with('feedbacks')->get();
     }
 
+    // auth pake user:
+    public function getAuthIdentifierName()
+    {
+        return 'username';
+    }
 
     public function feedbacks()
     {
