@@ -10,6 +10,11 @@ class UserController extends Controller
     public function index()
     {
         return User::all();
+        return response()->json([
+            'success' => true,
+            'message' => 'User berhasil ditampilkan',
+            'data' => $books,
+        ], 200);
     }
 
     public function show($id)
