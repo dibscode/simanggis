@@ -36,6 +36,17 @@
                 Login
             </button>
         </form>
+
+        <div class="mt-6 flex flex-col space-y-2">
+            <a href="{{ route("register.form") }}"
+                class="text-center text-sm text-blue-600 hover:underline">
+                Belum punya akun? Register di sini
+            </a>
+            <a href="/"
+                class="text-center text-sm text-gray-600 hover:underline">
+                ← Kembali ke Dashboard
+            </a>
+        </div>
     </div>
 
 </body>
