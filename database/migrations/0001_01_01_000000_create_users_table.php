@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id('user_id'); // AUTO_INCREMENT & Primary Key
             $table->string('username', 100);
             $table->string('password', 255);
-            $table->enum('role', ['admin', 'operator']);
+            $table->enum('role', ['admin', 'operator'])->default('admin');
             $table->rememberToken();
             $table->timestamps(); // created_at dan updated_at
         });

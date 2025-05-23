@@ -23,7 +23,7 @@
                 <a href="{{ route('login') }}"
                     class="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800"
                     data-aos="fade-left">Login</a>
-                <a href="#"
+                <a href="{{ route('register.form') }}"
                     class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
                     data-aos="fade-left">Sign up</a>
                 <button data-collapse-toggle="mega-menu-icons" type="button"
