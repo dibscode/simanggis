@@ -16,7 +16,7 @@
         <div class="flex flex-wrap items-center justify-between max-w-screen-xl mx-auto p-4">
             <a href="https://flowbite.com" class="flex items-center space-x-3 rtl:space-x-reverse"
                 data-aos="fade-right">
-                <img src="{{ asset('/storage/logo-icon.png') }}" class="h-8" alt="Flowbite Logo" />
+                <img src="{{ asset('/storage/Logo_SiMANGGIS.png') }}" class="h-8" alt="Flowbite Logo" />
                 <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">SIMANGGIS</span>
             </a>
             <div class="flex items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
