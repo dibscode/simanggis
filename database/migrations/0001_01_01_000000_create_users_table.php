@@ -12,13 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
-            $table->timestamps();
+            $table->id('user_id'); // Sesuai ERD
+            $table->string('name'); // Laravel default
+            $table->string('username', 100)->unique(); // Dari ERD
+            $table->string('email')->unique(); // Laravel default
+            $table->timestamp('email_verified_at')->nullable(); // Laravel default
+            $table->string('password', 255); // Disamakan dengan ERD
+            $table->enum('role', ['admin', 'operator']); // Dari ERD
+            $table->rememberToken(); // Laravel default (varchar(100))
+            $table->timestamps(); // created_at & updated_at
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
