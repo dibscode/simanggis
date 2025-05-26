@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
     <!-- Tambahkan CDN CSS AOS -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <link rel="shortcut icon" href="{{ asset('Logo _SiMANGGIS.png') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('Logo_SiMANGGIS.png') }}" type="image/x-icon">
     <title>SIMANGGIS - Sistem Monitoring Makan Gratis</title>
 </head>
 
@@ -181,7 +181,7 @@
                     class="w-full h-full object-cover"
                     style="pointer-events: none;"></video>
                 <!-- Overlay gelap agar teks tetap terbaca -->
-                <div class="absolute inset-0 bg-black opacity-60"></div>
+                <div class="absolute inset-0 bg-black opacity-80"></div>
             </div>
         </div>
         <div class="relative px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56 z-10 flex flex-col items-center justify-center w-full">
