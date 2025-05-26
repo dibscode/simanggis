@@ -16,7 +16,7 @@
   <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 ">
       <div class="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
           <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Our Team</h2>
-          <p class="font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">Explore the whole collection of open-source web components and elements built with the utility classes from Tailwind</p>
+          <p class="font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">Kami adalah tim pengembang yang berfokus pada pembuatan web untuk mendukung program makan sehat gratis di sekolah-sekolah. Bersama, kami membangun solusi digital yang mudah diakses dan berdampak langsung bagi kesehatan anak-anak sekolah.</p>
       </div> 
 
       <div class="grid gap-8 mb-6 lg:mb-16 md:grid-cols-2">
@@ -90,8 +90,8 @@
                   <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
                       <a href="#">Adrian Fakhriza Hakim</a>
                   </h3>
-                  <span class="text-gray-500 dark:text-gray-400">Universitas Pembangunan Veteran Jakarta</span>
-                  <p class="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">Backend</p>
+                  <span class="text-gray-500 dark:text-gray-400">UPN Veteran Jakarta</span>
+                  <p class="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">Backend Developer</p>
                   <ul class="flex space-x-4 sm:mt-0">
                       <li>
                           <a href="https://www.instagram.com/drianriza_" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
@@ -117,8 +117,8 @@
                   <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
                       <a href="#">Aditya Ega Pratama</a>
                   </h3>
-                  <span class="text-gray-500 dark:text-gray-400">Universitas Pembangunan Veteran Jakarta</span>
-                  <p class="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">Backend</p>
+                  <span class="text-gray-500 dark:text-gray-400">UPN Veteran Jakarta</span>
+                  <p class="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">Backend Developer</p>
                   <ul class="flex space-x-4 sm:mt-0">
                       <li>
                           <a href="https://www.instagram.com/aadityaaega" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
