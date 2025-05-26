@@ -211,18 +211,7 @@
         </div>
     </section>
 
-    <div class="p-6 bg-gray-50">
-        <!-- Section Profil Desa -->
-        <section class="bg-gray-50 py-10" id="profil-desa">
-            <div class="max-w-screen-xl mx-auto px-4 lg:px-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-
-        </section>
-
-
-
-
-    </div>
+   
     <!-- Tambahkan CDN JS AOS dan inisialisasi -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
