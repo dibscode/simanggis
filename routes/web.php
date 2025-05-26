@@ -1,6 +1,10 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SchoolController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\MealDistributionController;
+use App\Http\Controllers\FeedbackController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -17,6 +21,13 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::resource('schools', SchoolController::class);
+    Route::resource('students', StudentController::class);
+    Route::resource('distributions', MealDistributionController::class);
+    Route::resource('feedback', FeedbackController::class);
+    // Jika ada kelas, buat juga: Route::resource('classes', ClassController::class);
+});
 
 Route::view('/teams', 'teams')->name('teams');
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
