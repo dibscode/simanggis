@@ -12,10 +12,10 @@
 
 <body>
     @include('layouts.navbar')
-    <section class="bg-white dark:bg-gray-900">
+    <section class="bg-white">
   <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 ">
       <div class="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
-          <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Our Team</h2>
+          <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">Team Pengembang</h2>
           <p class="font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">Explore the whole collection of open-source web components and elements built with the utility classes from Tailwind</p>
       </div> 
 
@@ -24,11 +24,9 @@
         <!-- Najlaa -->
         <article class="items-center bg-gray-50 ...">
           <div class="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
-          <a href="#">
-             <img class="w-24 h-24 object-cover rounded-none" src="foto/najla.jpg" alt="Najla Avatar">
-
-
-         </a>
+            <a href="#">
+                <img class="w-24 h-24 object-cover rounded-none" src="foto/najla.jpg" alt="Najla Avatar">
+            </a>
               <div class="p-5">
                   <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
                       <a href="#">Najlaa Maharani Dewi Tiara Gunawan</a>
