@@ -145,12 +145,12 @@
                   <p class="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">Frontend Developer</p>
                   <ul class="flex space-x-4 sm:mt-0">
                       <li>
-                          <a href="https://www.instagram.com/najlamhr" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                          <a href="https://www.instagram.com/muhamad.ev/" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M7.75 2A5.75 5.75 0 0 0 2 7.75v8.5A5.75 5.75 0 0 0 7.75 22h8.5A5.75 5.75 0 0 0 22 16.25v-8.5A5.75 5.75 0 0 0 16.25 2h-8.5zm8.75 2.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7z"/></svg>
                           </a>
                       </li>
                       <li>
-                          <a href="https://www.github.com/Najlamhr" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                          <a href="https://github.com/muhamadpendi10" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
                               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.15 6.84 9.49.5.09.66-.22.66-.48v-1.72c-2.78.6-3.37-1.35-3.37-1.35-.45-1.16-1.1-1.47-1.1-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.08 2.91.83.09-.64.35-1.08.64-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02A9.57 9.57 0 0112 6.84c.86.004 1.71.12 2.51.34 1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.6 1.03 2.69 0 3.85-2.34 4.7-4.57 4.94.36.31.68.92.68 1.86v2.76c0 .26.18.57.69.48A10.02 10.02 0 0022 12c0-5.52-4.48-10-10-10z"/></svg>
                           </a>
                       </li>
