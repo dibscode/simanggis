@@ -30,6 +30,21 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::resource('classes', ClassesController::class);
 });
 
+
+
+Route::middleware(['auth', 'checkRole:admin'])->group(function () {
+    // halaman yang bisa diakses oleh admin!
+});
+
+Route::middleware(['auth', 'checkRole:operator'])->group(function () {
+    // halaman yang boleh diakses oleh guru
+});
+
+
+Route::middleware(['auth', 'checkRole:admin,operator'])->group(function () {
+    // halaman yang boleh diakses oleh admin & guru
+});
+
 Route::get('/schools', function () {
     return view('classes.index');
 })->name('schools');
