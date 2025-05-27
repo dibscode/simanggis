@@ -26,4 +26,9 @@ class School extends Model
     {
         return $this->hasMany(MealDistribution::class, 'school_id', 'school_id');
     }
+
+    public function user()
+    {
+        return $this->hasOne(User::class, 'user_id');
+    }
 }

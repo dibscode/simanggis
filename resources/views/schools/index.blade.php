@@ -1,4 +1,3 @@
-
 @extends('layouts.app')
 
 @section('content')
@@ -8,9 +7,9 @@
         <a href="{{ route('schools.create') }}" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">+ Tambah Sekolah</a>
     </div>
     @if(session('success'))
-        <div class="mb-4 p-3 bg-green-100 text-green-700 rounded">
-            {{ session('success') }}
-        </div>
+    <div class="mb-4 p-3 bg-green-100 text-green-700 rounded">
+        {{ session('success') }}
+    </div>
     @endif
     <div class="overflow-x-auto">
         <table class="min-w-full bg-white border rounded shadow">

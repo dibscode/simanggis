@@ -31,7 +31,7 @@ class SchoolController extends Controller
 
     public function show($id)
     {
-        $school = School::findOrFail($id);
+        $school = School::with(['students', 'students.meals', 'feedbacks'])->findOrFail($id);
         return view('schools.show', compact('school'));
     }
 
