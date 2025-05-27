@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('email')->unique(); // Laravel default
             $table->timestamp('email_verified_at')->nullable(); // Laravel default
             $table->string('password', 255); // Disamakan dengan ERD
-            $table->enum('role', ['admin', 'operator'])->default('operator'); // Dari ERD
+            $table->enum('role', ['admin', 'guru'])->default('admin'); // Dari ERD
             $table->rememberToken(); // Laravel default (varchar(100))
             $table->timestamps(); // created_at & updated_at
         });

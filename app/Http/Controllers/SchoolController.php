@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\School;
+use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Http\Request;
 
 class SchoolController extends Controller
@@ -25,7 +27,18 @@ class SchoolController extends Controller
             'address' => 'required|string',
             'contact_number' => 'required|string|max:15',
         ]);
-        School::create($request->all());
+
+$user = Auth::user();
+        // Pastikan user hanya bisa menambah 1 sekolah
+        if ($user = Auth::user()->school) {
+            return redirect()->route('schools.index')->with('error', 'Anda hanya dapat menambah satu sekolah.');
+        }
+
+        // Buat sekolah dan relasikan ke user yang sedang login
+        $school = new School($request->all());
+        $school = $user->school;
+        $school->save();
+
         return redirect()->route('schools.index')->with('success', 'School created successfully.');
     }
 
