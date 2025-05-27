@@ -23,12 +23,20 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::resource('schools', SchoolController::class);
+    // Route::resource('schools', SchoolController::class);
     Route::resource('students', StudentController::class);
     Route::resource('distributions', MealDistributionController::class);
     Route::resource('feedback', FeedbackController::class);
     Route::resource('classes', ClassesController::class);
 });
+
+Route::get('/schools', function () {
+    return view('classes.index');
+})->name('schools');
+
+Route::get('/schools/detail', function () {
+    return view('classes.show');
+})->name('schools.detail');
 
 Route::view('/teams', 'teams')->name('teams');
 require __DIR__ . '/auth.php';
