@@ -11,8 +11,20 @@ class SchoolController extends Controller
 {
     public function index()
     {
-        $schools = School::all();
-        return view('schools.index', compact('schools'));
+        $userId = Auth::id();
+
+        // Ambil sekolah berdasarkan user_id
+        $school = School::where('user_id', $userId)->first();
+        return view('schools.index', compact('school'));
+    }
+
+    public function showEditForm()
+    {
+        $userId = Auth::id();
+
+        // Ambil sekolah berdasarkan user_id
+        $school = School::where('user_id', $userId)->first();
+        return view('schools.edit', compact('school'));
     }
 
     public function create()
@@ -28,7 +40,7 @@ class SchoolController extends Controller
             'contact_number' => 'required|string|max:15',
         ]);
 
-$user = Auth::user();
+        $user = Auth::user();
         // Pastikan user hanya bisa menambah 1 sekolah
         if ($user = Auth::user()->school) {
             return redirect()->route('schools.index')->with('error', 'Anda hanya dapat menambah satu sekolah.');
@@ -59,11 +71,13 @@ $user = Auth::user();
         $request->validate([
             'school_name' => 'required|string|max:255',
             'address' => 'required|string',
-            'contact_number' => 'required|string|max:15',
+            'contact_number' => 'required|numeric',
         ]);
-        $school = School::findOrFail($id);
+ 
+        $school = School::where('school_id', $id)->firstOrFail();
+
         $school->update($request->all());
-        return redirect()->route('schools.index')->with('success', 'School updated successfully.');
+        return redirect()->route('school.data')->with('success', 'School updated successfully.');
     }
 
     public function destroy($id)

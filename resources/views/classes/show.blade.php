@@ -1,39 +1,82 @@
-<!-- Flowbite CDN -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
-<!-- Tailwind CDN -->
-<script src="https://cdn.tailwindcss.com"></script>
+<!DOCTYPE html>
+<html lang="id">
 
-<div class="container mx-auto px-4 py-8">
-  <a href="#" class="text-blue-600 hover:underline flex items-center mb-4">
-    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>
-    Kembali ke Daftar Kelas
-  </a>
-  <div class="bg-white rounded shadow p-6">
-    <h2 class="text-2xl font-bold mb-4">Detail Kelas</h2>
-    <div class="mb-4">
-      <span class="font-semibold">Nama Kelas:</span>
-      <span class="ml-2">X IPA 1</span>
-    </div>
-    <div class="mb-4">
-      <span class="font-semibold">Sekolah:</span>
-      <span class="ml-2">SMA Negeri 1</span>
-    </div>
-    <div class="mb-4">
-      <span class="font-semibold">Wali Kelas:</span>
-      <span class="ml-2">Budi Santoso, S.Pd</span>
-    </div>
-    <div class="mb-4">
-      <span class="font-semibold">Jumlah Siswa:</span>
-      <span class="ml-2">32</span>
-    </div>
-    <div>
-      <span class="font-semibold">Deskripsi:</span>
-      <p class="ml-2 mt-1 text-gray-700">Kelas X IPA 1 merupakan kelas unggulan dengan fokus pada bidang ilmu pengetahuan alam.</p>
-    </div>
-    <div class="mt-6 flex space-x-2">
-      <button class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600">Edit</button>
-      <button class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700" onclick="alert('Yakin hapus kelas ini?')">Hapus</button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detail Kelas</title>
+  <!-- Flowbite -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+  <div class="flex h-screen">
+
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white shadow-md hidden md:block">
+      <div class="p-6 font-bold text-xl text-blue-600 border-b">Admin Panel</div>
+      <nav class="p-4">
+        <ul class="space-y-2">
+          <li><a href="#" class="block px-4 py-2 rounded hover:bg-blue-100">Dashboard</a></li>
+          <li><a href="#" class="block px-4 py-2 rounded hover:bg-blue-100">Data Sekolah</a></li>
+          <li><a href="#" class="block px-4 py-2 rounded hover:bg-blue-100">Data Kelas</a></li>
+          <li><a href="#" class="block px-4 py-2 rounded hover:bg-blue-100">Tambah Guru</a></li>
+          <li><a href="#" class="block px-4 py-2 rounded hover:bg-blue-100">Distribusi Makan</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main content -->
+    <div class="flex-1 flex flex-col">
+      <!-- Topbar -->
+      <header class="bg-white shadow px-6 py-4 flex justify-between items-center">
+        <h1 class="text-xl font-semibold">Detail Kelas</h1>
+        <div>
+          <button class="text-sm text-gray-600 hover:text-blue-600">Keluar</button>
+        </div>
+      </header>
+
+      <!-- Page content -->
+      <main class="p-6 overflow-y-auto">
+        <div class="mb-6">
+          <a href="{{ route('class') }}" class="text-blue-600 hover:underline">&larr; Kembali ke Daftar Kelas</a>
+        </div>
+
+        <div class="bg-white rounded shadow p-6">
+          <h2 class="text-2xl font-bold mb-4">Detail Kelas: X IPA 1</h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <p class="text-gray-600">Nama Kelas:</p>
+              <p class="font-semibold text-gray-900">X IPA 1</p>
+            </div>
+            <div>
+              <p class="text-gray-600">Sekolah:</p>
+              <p class="font-semibold text-gray-900">SMA Negeri 1</p>
+            </div>
+            <div>
+              <p class="text-gray-600">Jumlah Siswa:</p>
+              <p class="font-semibold text-gray-900">32</p>
+            </div>
+            <div>
+              <p class="text-gray-600">Wali Kelas:</p>
+              <p class="font-semibold text-gray-900">Ibu Siti Aminah</p>
+            </div>
+          </div>
+
+          <div class="mt-6">
+            <h3 class="text-xl font-semibold mb-2">Deskripsi:</h3>
+            <p class="text-gray-700">Kelas unggulan untuk jurusan IPA dengan fokus pada sains dan matematika.</p>
+          </div>
+        </div>
+      </main>
     </div>
   </div>
-</div>
+
+</body>
+
+</html>

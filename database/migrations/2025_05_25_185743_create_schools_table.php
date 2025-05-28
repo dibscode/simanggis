@@ -15,8 +15,8 @@ return new class extends Migration
             $table->bigIncrements('school_id');
             $table->unsignedBigInteger('user_id');
             $table->string('school_name', 255);
-            $table->text('address');
-            $table->string('contact_number', 15);
+            $table->text('address')->nullable();
+            $table->string('contact_number', 15)->nullable();
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });

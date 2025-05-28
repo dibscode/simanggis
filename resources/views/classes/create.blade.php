@@ -1,40 +1,101 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="id">
 
-@section('content')
-<div class="container mx-auto px-4 py-8">
-    <div class="max-w-lg mx-auto bg-white p-6 rounded shadow">
-        <h2 class="text-xl font-bold mb-6">Tambah Kelas</h2>
-        @if ($errors->any())
-            <div class="mb-4 p-3 bg-red-100 text-red-700 rounded">
-                <ul class="list-disc pl-5">
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tambah Kelas</title>
+    <!-- Flowbite -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+    <div class="flex h-screen">
+
+        <!-- Sidebar -->
+        <aside class="w-64 bg-white shadow-md hidden md:block">
+            <div class="p-6 font-bold text-xl text-blue-600 border-b">Admin Panel</div>
+            <nav class="p-4">
+                <ul class="space-y-2">
+                    <li><a href="#" class="block px-4 py-2 rounded hover:bg-blue-100">Dashboard</a></li>
+                    <li><a href="#" class="block px-4 py-2 rounded hover:bg-blue-100">Data Sekolah</a></li>
+                    <li><a href="#" class="block px-4 py-2 rounded hover:bg-blue-100">Data Kelas</a></li>
+                    <li><a href="#" class="block px-4 py-2 rounded hover:bg-blue-100">Tambah Guru</a></li>
+                    <li><a href="#" class="block px-4 py-2 rounded hover:bg-blue-100">Distribusi Makan</a></li>
                 </ul>
-            </div>
-        @endif
-        <form action="{{ route('classes.store') }}" method="POST">
-            @csrf
-            <div class="mb-4">
-                <label for="school_id" class="block font-semibold mb-1">Sekolah</label>
-                <select name="school_id" id="school_id" class="w-full border px-3 py-2 rounded" required>
-                    <option value="">-- Pilih Sekolah --</option>
-                    @foreach($schools as $school)
-                        <option value="{{ $school->school_id }}" {{ old('school_id') == $school->school_id ? 'selected' : '' }}>
-                            {{ $school->school_name }}
-                        </option>
-                    @endforeach
-                </select>
-            </div>
-            <div class="mb-4">
-                <label for="class_name" class="block font-semibold mb-1">Nama Kelas</label>
-                <input type="text" name="class_name" id="class_name" value="{{ old('class_name') }}" class="w-full border px-3 py-2 rounded" required>
-            </div>
-            <div class="flex justify-end">
-                <a href="{{ route('classes.index') }}" class="mr-3 px-4 py-2 rounded bg-gray-200 hover:bg-gray-300">Batal</a>
-                <button type="submit" class="px-4 py-2 rounded bg-blue-600 text-white hover:bg-blue-700">Simpan</button>
-            </div>
-        </form>
+            </nav>
+        </aside>
+
+        <!-- Main content -->
+        <div class="flex-1 flex flex-col">
+            <!-- Topbar -->
+            <header class="bg-white shadow px-6 py-4 flex justify-between items-center">
+                <h1 class="text-xl font-semibold">Tambah Kelas</h1>
+                <div>
+                    <button class="text-sm text-gray-600 hover:text-blue-600">Keluar</button>
+                </div>
+            </header>
+
+            <!-- Page content -->
+            <main class="p-6 overflow-y-auto">
+                <div class="mb-6">
+                    <a href="{{ route('class') }}" class="text-blue-600 hover:underline">&larr; Kembali ke Daftar
+                        Kelas</a>
+                </div>
+
+                <div class="bg-white p-6 rounded shadow">
+                    <h2 class="text-2xl font-bold mb-4">Form Tambah Kelas</h2>
+
+                    <form action="{{ route('class.addData') }}" method="POST" class="space-y-4">
+                        @csrf
+                        <div>
+                            <label class="block text-gray-700">Nama Kelas</label>
+                            <input type="text" name="nama_kelas" placeholder="Contoh: X IPA 1"
+                                class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                required />
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-700">Wali Kelas</label>
+                            <select name="wali_kelas"
+                                class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                required>
+                                <option value="">-- Pilih Wali Kelas --</option>
+                                <option value="1">Ibu Siti Aminah</option>
+                                <option value="2">Pak Budi</option>
+                                <option value="3">Ibu Rina</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-700">Jumlah Siswa</label>
+                            <input type="number" name="jumlah_siswa" min="1"
+                                class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-700">Deskripsi (opsional)</label>
+                            <textarea name="deskripsi" rows="4"
+                                class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                placeholder="Deskripsi kelas..."></textarea>
+                        </div>
+
+                        <div class="pt-4">
+                            <button type="submit"
+                                class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">Simpan</button>
+                            <a href="index.html"
+                                class="ml-2 px-4 py-2 text-gray-700 border rounded hover:bg-gray-100">Batal</a>
+                        </div>
+                    </form>
+                </div>
+            </main>
+        </div>
     </div>
-</div>
-@endsection
+
+</body>
+
+</html>

@@ -34,6 +34,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 Route::middleware(['auth', 'checkRole:admin'])->group(function () {
     // halaman yang bisa diakses oleh admin!
+    Route::get('/school', [SchoolController::class, 'index'])->name('school.data');
+    Route::get('/school/detail', [SchoolController::class, 'showEditForm'])->name('school.detail');
+    Route::put('/school/detail/{id}', [SchoolController::class, 'update'])->name('school.update');
 });
 
 Route::middleware(['auth', 'checkRole:operator'])->group(function () {
@@ -43,15 +46,22 @@ Route::middleware(['auth', 'checkRole:operator'])->group(function () {
 
 Route::middleware(['auth', 'checkRole:admin,operator'])->group(function () {
     // halaman yang boleh diakses oleh admin & guru
+    Route::get('/class', function () {
+        return view('classes.index');
+    })->name('class');
+    
+    Route::get('/class/detail', function () {
+        return view('classes.show');
+    })->name('class.detail');
+
+    Route::get('/class/add', function () {
+        return view('classes.create');
+    })->name('class.add');
+
+    Route::post('/class/add', [ClassesController::class, 'store'])->name('class.addData');
 });
 
-Route::get('/schools', function () {
-    return view('classes.index');
-})->name('schools');
 
-Route::get('/schools/detail', function () {
-    return view('classes.show');
-})->name('schools.detail');
 
 Route::view('/teams', 'teams')->name('teams');
 require __DIR__ . '/auth.php';
