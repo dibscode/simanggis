@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Classes;
 use App\Models\School;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ClassesController extends Controller
 {
@@ -14,7 +16,10 @@ class ClassesController extends Controller
     public function index()
     {
         // Ambil semua kelas beserta sekolahnya
-        $classes = Classes::with('school')->get();
+        $school_id = Auth::user()->school_id;
+        $classes = Classes::with('teacher')
+            ->where('school_id', $school_id)
+            ->get();
         return view('classes.index', compact('classes'));
     }
 
@@ -23,9 +28,12 @@ class ClassesController extends Controller
      */
     public function create()
     {
-        // Ambil semua sekolah untuk dropdown (jika diperlukan)
-        $schools = School::all();
-        return view('classes.create', compact('schools'));
+        // Ambil semua guru untuk dropdown (jika diperlukan)
+        $school_id = Auth::user()->school_id;
+        $teachers = User::where('role', 'guru')
+            ->where('school_id', $school_id)
+            ->get();
+        return view('classes.create', compact('teachers'));
     }
 
     /**
@@ -33,15 +41,25 @@ class ClassesController extends Controller
      */
     public function store(Request $request)
     {
+        $school_id = Auth::user()->school_id;
+
         $request->validate([
-            'school_id' => 'required|exists:schools,school_id',
+            'teacher_id' => 'required|exists:users,id',
             'class_name' => 'required|string|max:255',
+            'description' => 'nullable|string',
         ]);
 
-        Classes::create($request->all());
+        // Tambahkan school_id ke data yang dikirim
+        Classes::create([
+            'school_id' => $school_id,
+            'teacher_id' => $request->teacher_id,
+            'class_name' => $request->class_name,
+            'description' => $request->description,
+        ]);
 
-        return redirect()->route('classes.index')->with('success', 'Kelas berhasil ditambahkan.');
+        return redirect()->route('class')->with('success', 'Kelas berhasil ditambahkan.');
     }
+
 
     /**
      * Display the specified resource.
@@ -58,25 +76,38 @@ class ClassesController extends Controller
     public function edit($id)
     {
         $class = Classes::findOrFail($id);
-        $schools = School::all();
-        return view('classes.edit', compact('class', 'schools'));
+
+        // Ambil school_id dari kelas
+        $schoolId = $class->school_id;
+
+        // Ambil teacher yang punya school_id sama dengan kelasnya
+        $teachers = User::where('role', 'guru')
+            ->where('school_id', $schoolId)
+            ->get();
+
+        return view('classes.edit', compact('class', 'teachers'));
     }
+
 
     /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'school_id' => 'required|exists:schools,school_id',
+        $validatedData = $request->validate([
             'class_name' => 'required|string|max:255',
+            'description' => 'nullable|string',
+            'teacher_id' => 'required|exists:users,id',
         ]);
 
         $class = Classes::findOrFail($id);
-        $class->update($request->all());
+        $class->update($validatedData);
 
-        return redirect()->route('classes.index')->with('success', 'Kelas berhasil diupdate.');
+        return redirect()
+            ->route('classes.index')
+            ->with('success', "Kelas '{$class->class_name}' berhasil diupdate.");
     }
+
 
     /**
      * Remove the specified resource from storage.

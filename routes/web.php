@@ -59,20 +59,18 @@ Route::middleware(['auth', 'checkRole:guru'])->group(function () {
 
 Route::middleware(['auth', 'checkRole:admin,operator'])->group(function () {
     // halaman yang boleh diakses oleh admin & guru
-    Route::get('/class', function () {
-        return view('classes.index');
-    })->name('class');
+    Route::get('/class', [ClassesController::class, 'index'])->name('class');
 
     Route::get('/class/detail', function () {
         return view('classes.show');
     })->name('class.detail');
-
-    Route::get('/class/add', function () {  
-        return view('classes.create');
-    })->name('class.add');
+    Route::get('/class/edit/{id}', [ClassesController::class, 'edit'])->name('class.edit');
+    Route::put('/class/edit/{id}', [ClassesController::class, 'update'])->name('class.update');
+    Route::get('/class/add', [ClassesController::class, 'create'])->name('class.add');
 
     Route::post('/class/add', [ClassesController::class, 'store'])->name('class.addData');
 });
+
 
 
 

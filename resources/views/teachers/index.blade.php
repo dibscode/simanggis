@@ -16,17 +16,15 @@
 
     <div class="flex h-screen">
         <!-- Sidebar -->
-        <aside class="w-64 bg-white shadow-md hidden md:block">
+         <aside class="w-64 bg-white shadow-md hidden md:block">
             <div class="p-6 font-bold text-xl text-blue-600 border-b">Admin Panel</div>
             <nav class="p-4">
                 <ul class="space-y-2">
-                    <li><a href="#" class="block px-4 py-2 rounded hover:bg-blue-100">Dashboard</a></li>
-                    <li><a href="#" class="block px-4 py-2 rounded hover:bg-blue-100">Data Sekolah</a></li>
-                    <li><a href="#" class="block px-4 py-2 rounded hover:bg-blue-100">Data Kelas</a></li>
-                    <li>
-                        <a href="#" class="block px-4 py-2 rounded bg-blue-600 text-white">Manajemen Guru</a>
-                    </li>
-                    <li><a href="#" class="block px-4 py-2 rounded hover:bg-blue-100">Distribusi Makan</a></li>
+                    <li><a href="{{ route('school.data') }}" class="block px-4 py-2 rounded hover:bg-blue-100">Dashboard</a></li>
+                    <li><a href="{{ route('school.data') }}" class="block px-4 py-2 rounded hover:bg-blue-100">Data Sekolah</a></li>
+                    <li><a href="{{ route('class') }}" class="block px-4 py-2 rounded hover:bg-blue-100">Daftar Kelas</a></li>
+                    <li><a href="{{ route('teachers') }}" class="block px-4 py-2 rounded bg-blue-600 text-white">Daftar Guru</a></li>
+                    <li><a href="{{ route('school.data') }}" class="block px-4 py-2 rounded hover:bg-blue-100">Distribusi Makan</a></li>
                 </ul>
             </nav>
         </aside>

@@ -20,11 +20,16 @@
             <div class="p-6 font-bold text-xl text-blue-600 border-b">Admin Panel</div>
             <nav class="p-4">
                 <ul class="space-y-2">
-                    <li><a href="#" class="block px-4 py-2 rounded hover:bg-blue-100">Dashboard</a></li>
-                    <li><a href="#" class="block px-4 py-2 rounded hover:bg-blue-100">Data Sekolah</a></li>
-                    <li><a href="#" class="block px-4 py-2 rounded hover:bg-blue-100">Data Kelas</a></li>
-                    <li><a href="#" class="block px-4 py-2 rounded bg-blue-600 text-white">Manajemen Guru</a></li>
-                    <li><a href="#" class="block px-4 py-2 rounded hover:bg-blue-100">Distribusi Makan</a></li>
+                    <li><a href="{{ route('school.data') }}"
+                            class="block px-4 py-2 rounded hover:bg-blue-100">Dashboard</a></li>
+                    <li><a href="{{ route('school.data') }}" class="block px-4 py-2 rounded hover:bg-blue-100">Data
+                            Sekolah</a></li>
+                    <li><a href="{{ route('class') }}" class="block px-4 py-2 rounded hover:bg-blue-100">Daftar
+                            Kelas</a></li>
+                    <li><a href="{{ route('teachers') }}" class="block px-4 py-2 rounded bg-blue-600 text-white">Daftar
+                            Guru</a></li>
+                    <li><a href="{{ route('school.data') }}"
+                            class="block px-4 py-2 rounded hover:bg-blue-100">Distribusi Makan</a></li>
                 </ul>
             </nav>
         </aside>
@@ -34,8 +39,9 @@
             <!-- Header -->
             <header class="bg-white shadow px-6 py-4 flex justify-between items-center">
                 <h1 class="text-xl font-semibold">Tambah Guru</h1>
-                <form method="POST" action="{{ route('logout') }}" onsubmit="return confirm('Yakin ingin logout?');">
-                  @csrf
+                <form method="POST" action="{{ route('logout') }}" onsubmit="return confirm('Yakin ingin logout?');"
+                    class="inline">
+                    @csrf
                     <button type="submit" class="text-sm text-gray-600 hover:text-blue-600">
                         Keluar
                     </button>
@@ -55,7 +61,7 @@
                         </div>
                     @endif
                     <form action="{{ route('teachers.addData') }}" method="POST" class="space-y-4">
-                      @csrf
+                        @csrf
                         <div>
                             <label for="name" class="block text-sm font-medium text-gray-700">Nama Lengkap</label>
                             <input type="text" id="name" name="name" required

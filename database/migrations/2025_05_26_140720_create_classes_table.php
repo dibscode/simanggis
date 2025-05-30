@@ -14,9 +14,13 @@ return new class extends Migration
         Schema::create('classes', function (Blueprint $table) {
             $table->bigIncrements('class_id');
             $table->unsignedBigInteger('school_id');
+            $table->unsignedBigInteger('teacher_id')->nullable();
             $table->string('class_name');
+            $table->text('description')->nullable();
             $table->timestamps();
+
             $table->foreign('school_id')->references('school_id')->on('schools')->onDelete('cascade');
+            $table->foreign('teacher_id')->references('id')->on('users')->onDelete('set null');
         });
     }
 
