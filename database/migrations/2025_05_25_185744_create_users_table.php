@@ -18,9 +18,12 @@ return new class extends Migration
             $table->string('email')->unique(); // Laravel default
             $table->timestamp('email_verified_at')->nullable(); // Laravel default
             $table->string('password', 255); // Disamakan dengan ERD
+            $table->unsignedBigInteger('school_id');
             $table->enum('role', ['admin', 'guru'])->default('admin'); // Dari ERD
             $table->rememberToken(); // Laravel default (varchar(100))
             $table->timestamps(); // created_at & updated_at
+
+            $table->foreign('school_id')->references('school_id')->on('schools')->onDelete('cascade');
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {

@@ -28,8 +28,8 @@ class School extends Model
         return $this->hasMany(MealDistribution::class, 'school_id', 'school_id');
     }
 
-    public function user()
+    public function users()
     {
-        return $this->hasOne(User::class, 'user_id');
+        return $this->hasMany(User::class, 'school_id');
     }
 }

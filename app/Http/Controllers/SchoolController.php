@@ -11,19 +11,13 @@ class SchoolController extends Controller
 {
     public function index()
     {
-        $userId = Auth::id();
-
-        // Ambil sekolah berdasarkan user_id
-        $school = School::where('user_id', $userId)->first();
+        $school = Auth::user()->school;
         return view('schools.index', compact('school'));
     }
 
     public function showEditForm()
     {
-        $userId = Auth::id();
-
-        // Ambil sekolah berdasarkan user_id
-        $school = School::where('user_id', $userId)->first();
+        $school = Auth::user()->school;
         return view('schools.edit', compact('school'));
     }
 
@@ -66,15 +60,15 @@ class SchoolController extends Controller
         return view('schools.edit', compact('school'));
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
         $request->validate([
             'school_name' => 'required|string|max:255',
             'address' => 'required|string',
             'contact_number' => 'required|numeric',
         ]);
- 
-        $school = School::where('school_id', $id)->firstOrFail();
+
+        $school = Auth::user()->school;
 
         $school->update($request->all());
         return redirect()->route('school.data')->with('success', 'School updated successfully.');

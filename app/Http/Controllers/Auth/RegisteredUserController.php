@@ -37,18 +37,18 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'school_name' => ['required', 'string', 'max:255'],  // validasi nama sekolah
         ]);
+        $school = School::create([
+            'school_name' => $request->school_name
+        ]);
 
         $user = User::create([
             'name' => $request->name,
             'username' => $request->username,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'school_id' => $school->school_id
         ]);
 
-        School::create([
-            'school_name' => $request->school_name,
-            'user_id' => $user->id,
-        ]);
 
         event(new Registered($user));
 
