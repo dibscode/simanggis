@@ -28,7 +28,7 @@
                         </a>
                     </li>
                     <li><a href="#" class="block px-4 py-2 rounded hover:bg-blue-100">Data Kelas</a></li>
-                    <li><a href="#" class="block px-4 py-2 rounded hover:bg-blue-100">Tambah Guru</a></li>
+                    <li><a href="{{ route('teachers') }}" class="block px-4 py-2 rounded hover:bg-blue-100">Manajemen Guru</a></li>
                     <li><a href="#" class="block px-4 py-2 rounded hover:bg-blue-100">Distribusi Makan</a></li>
                 </ul>
             </nav>

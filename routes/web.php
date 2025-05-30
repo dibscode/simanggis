@@ -67,7 +67,7 @@ Route::middleware(['auth', 'checkRole:admin,operator'])->group(function () {
         return view('classes.show');
     })->name('class.detail');
 
-    Route::get('/class/add', function () {
+    Route::get('/class/add', function () {  
         return view('classes.create');
     })->name('class.add');
 

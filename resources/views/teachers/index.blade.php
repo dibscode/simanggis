@@ -14,90 +14,93 @@
 
 <body class="bg-gray-100">
 
-<div class="flex h-screen">
-    <!-- Sidebar -->
-    <aside class="w-64 bg-white shadow-md hidden md:block">
-        <div class="p-6 font-bold text-xl text-blue-600 border-b">Admin Panel</div>
-        <nav class="p-4">
-            <ul class="space-y-2">
-                <li><a href="#" class="block px-4 py-2 rounded hover:bg-blue-100">Dashboard</a></li>
-                <li><a href="#" class="block px-4 py-2 rounded hover:bg-blue-100">Data Sekolah</a></li>
-                <li><a href="#" class="block px-4 py-2 rounded hover:bg-blue-100">Data Kelas</a></li>
-                <li>
-                    <a href="#" class="block px-4 py-2 rounded bg-blue-600 text-white">Manajemen Guru</a>
-                </li>
-                <li><a href="#" class="block px-4 py-2 rounded hover:bg-blue-100">Distribusi Makan</a></li>
-            </ul>
-        </nav>
-    </aside>
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-white shadow-md hidden md:block">
+            <div class="p-6 font-bold text-xl text-blue-600 border-b">Admin Panel</div>
+            <nav class="p-4">
+                <ul class="space-y-2">
+                    <li><a href="#" class="block px-4 py-2 rounded hover:bg-blue-100">Dashboard</a></li>
+                    <li><a href="#" class="block px-4 py-2 rounded hover:bg-blue-100">Data Sekolah</a></li>
+                    <li><a href="#" class="block px-4 py-2 rounded hover:bg-blue-100">Data Kelas</a></li>
+                    <li>
+                        <a href="#" class="block px-4 py-2 rounded bg-blue-600 text-white">Manajemen Guru</a>
+                    </li>
+                    <li><a href="#" class="block px-4 py-2 rounded hover:bg-blue-100">Distribusi Makan</a></li>
+                </ul>
+            </nav>
+        </aside>
 
-    <!-- Main content -->
-    <div class="flex-1 flex flex-col">
-        <!-- Topbar -->
-        <header class="bg-white shadow px-6 py-4 flex justify-between items-center">
-            <h1 class="text-xl font-semibold">Manajemen Guru</h1>
-            <form method="POST" action="#" onsubmit="return confirm('Yakin ingin logout?');">
-                <button type="submit" class="text-sm text-gray-600 hover:text-blue-600">
-                    Keluar
-                </button>
-            </form>
-        </header>
+        <!-- Main content -->
+        <div class="flex-1 flex flex-col">
+            <!-- Topbar -->
+            <header class="bg-white shadow px-6 py-4 flex justify-between items-center">
+                <h1 class="text-xl font-semibold">Manajemen Guru</h1>
+                <form method="POST" action="{{ route('logout') }}" onsubmit="return confirm('Yakin ingin logout?');">
+                    @csrf
+                    <button type="submit" class="text-sm text-gray-600 hover:text-blue-600">
+                        Keluar
+                    </button>
+                </form>
+            </header>
 
-        <!-- Page content -->
-        <main class="p-6 overflow-y-auto">
-            <div class="flex justify-between mb-4">
-                <h2 class="text-2xl font-bold">Daftar Guru</h2>
-                <a href="{{ route('teachers.add') }}" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-                    + Tambah Guru
-                </a>
-            </div>
+            <!-- Page content -->
+            <main class="p-6 overflow-y-auto">
+                <div class="flex justify-between mb-4">
+                    <h2 class="text-2xl font-bold">Daftar Guru</h2>
+                    @if (session('success'))
+                        <div class="text-green-600 mb-4">
+                            <p>{{ session('success') }}</p>
+                        </div>
+                    @endif
+                    <a href="{{ route('teachers.addForm') }}"
+                        class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                        + Tambah Guru
+                    </a>
+                </div>
 
-            <div class="bg-white rounded shadow p-4 overflow-x-auto">
-                <table class="min-w-full table-auto text-left">
-                    <thead>
-                        <tr class="bg-gray-100">
-                            <th class="px-4 py-2">#</th>
-                            <th class="px-4 py-2">Nama</th>
-                            <th class="px-4 py-2">Email</th>
-                            <th class="px-4 py-2">Wali Kelas</th>
-                            <th class="px-4 py-2">Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Contoh 1 -->
-                        <tr class="border-b">
-                            <td class="px-4 py-2">1</td>
-                            <td class="px-4 py-2">Budi Santoso</td>
-                            <td class="px-4 py-2">budi@example.com</td>
-                            <td class="px-4 py-2">Kelas 3A</td>
-                            <td class="px-4 py-2 flex gap-2">
-                                <a href="#" class="text-blue-600 hover:underline">Edit</a>
-                                <button onclick="confirm('Yakin ingin menghapus guru ini?')" class="text-red-600 hover:underline">Hapus</button>
-                            </td>
-                        </tr>
-                        <!-- Contoh 2 -->
-                        <tr class="border-b">
-                            <td class="px-4 py-2">2</td>
-                            <td class="px-4 py-2">Siti Aminah</td>
-                            <td class="px-4 py-2">siti@example.com</td>
-                            <td class="px-4 py-2">Kelas 1B</td>
-                            <td class="px-4 py-2 flex gap-2">
-                                <a href="#" class="text-blue-600 hover:underline">Edit</a>
-                                <button onclick="confirm('Yakin ingin menghapus guru ini?')" class="text-red-600 hover:underline">Hapus</button>
-                            </td>
-                        </tr>
-                        <!-- Jika kosong -->
-                        <!--
+                <div class="bg-white rounded shadow p-4 overflow-x-auto">
+                    <table class="min-w-full table-auto text-left">
+                        <thead>
+                            <tr class="bg-gray-100">
+                                <th class="px-4 py-2">#</th>
+                                <th class="px-4 py-2">Nama</th>
+                                <th class="px-4 py-2">Email</th>
+                                <th class="px-4 py-2">Wali Kelas</th>
+                                <th class="px-4 py-2">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Jika kosong -->
+                            @foreach ($teachers as $teacher)
+                                <tr class="border-b">
+                                    <td class="px-4 py-2">{{ $loop->iteration }}</td>
+                                    <td class="px-4 py-2">{{ $teacher->name }}</td>
+                                    <td class="px-4 py-2">{{ $teacher->email }}</td>
+                                    <td class="px-4 py-2">{{ $teacher->class_name ?? 'Tidak ada' }}</td>
+                                    <td class="px-4 py-2 flex gap-2">
+                                        <a href="{{ route('teachers.editForm', $teacher->id) }}"
+                                            class="text-blue-600 hover:underline">Edit</a>
+                                        <form action="{{ route('teachers.deleteData', $teacher->id) }}" method="POST"
+                                            onsubmit="return confirm('Yakin ingin menghapus guru ini?');">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="text-red-600 hover:underline">Hapus</button>
+                                        </form>
+                                    </td>
+                                </tr> <!-- ✅ ini tadi yang kurang -->
+                            @endforeach
+                            <!--
                         <tr>
                             <td colspan="5" class="text-center text-gray-500 py-4">Belum ada data guru.</td>
                         </tr>
                         -->
-                    </tbody>
-                </table>
-            </div>
-        </main>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+        </div>
     </div>
-</div>
 
 </body>
 
