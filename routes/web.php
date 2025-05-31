@@ -50,6 +50,18 @@ Route::middleware(['auth', 'checkRole:admin'])->group(function () {
     Route::get('/teachers/detail/{id}', [TeacherController::class, 'show'])->name('teachers.detail');
 
     // STUDENTS DATA
+    
+
+    // CLASSES DATA
+    Route::get('/class', [ClassesController::class, 'index'])->name('class');
+    Route::get('/class/edit/{id}', [ClassesController::class, 'edit'])->name('class.edit');
+    Route::put('/class/edit/{id}', [ClassesController::class, 'update'])->name('class.update');
+    Route::get('/class/add', [ClassesController::class, 'create'])->name('class.add');
+    Route::post('/class/add', [ClassesController::class, 'store'])->name('class.addData');
+    Route::get('/class/detail', function () {
+        return view('classes.show');
+    })->name('class.detail');
+
 });
 
 Route::middleware(['auth', 'checkRole:guru'])->group(function () {
@@ -59,16 +71,6 @@ Route::middleware(['auth', 'checkRole:guru'])->group(function () {
 
 Route::middleware(['auth', 'checkRole:admin,operator'])->group(function () {
     // halaman yang boleh diakses oleh admin & guru
-    Route::get('/class', [ClassesController::class, 'index'])->name('class');
-
-    Route::get('/class/detail', function () {
-        return view('classes.show');
-    })->name('class.detail');
-    Route::get('/class/edit/{id}', [ClassesController::class, 'edit'])->name('class.edit');
-    Route::put('/class/edit/{id}', [ClassesController::class, 'update'])->name('class.update');
-    Route::get('/class/add', [ClassesController::class, 'create'])->name('class.add');
-
-    Route::post('/class/add', [ClassesController::class, 'store'])->name('class.addData');
 });
 
 
