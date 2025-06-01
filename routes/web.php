@@ -25,10 +25,10 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware(['auth', 'verified'])->group(function () {
     // Route::resource('schools', SchoolController::class);
-    Route::resource('students', StudentController::class);
-    Route::resource('distributions', MealDistributionController::class);
-    Route::resource('feedback', FeedbackController::class);
-    Route::resource('classes', ClassesController::class);
+    // Route::resource('students', StudentController::class);
+    // Route::resource('distributions', MealDistributionController::class);
+    // Route::resource('feedback', FeedbackController::class);
+    // Route::resource('classes', ClassesController::class);
 });
 
 
@@ -49,7 +49,14 @@ Route::middleware(['auth', 'checkRole:admin'])->group(function () {
     Route::delete('/teachers/delete/{id}', [TeacherController::class, 'destroy'])->name('teachers.deleteData');
     Route::get('/teachers/detail/{id}', [TeacherController::class, 'show'])->name('teachers.detail');
 
-    // STUDENTS DATA
+    // STUDENTS DATA 
+    Route::get('/students', [StudentController::class, 'index'])->name('students');
+    Route::get('/students/add', [StudentController::class, 'create'])->name('students.addForm');
+    Route::post('/students/add', [StudentController::class, 'store'])->name('students.addData');
+    Route::get('/students/edit/{id}', [StudentController::class, 'edit'])->name('students.editForm');
+    Route::put('/students/edit/{id}', [StudentController::class, 'update'])->name('students.editData');
+    Route::delete('/students/delete/{id}', [StudentController::class, 'destroy'])->name('students.deleteData');
+    Route::get('/students/detail/{id}', [StudentController::class, 'show'])->name('students.detail');
     
 
     // CLASSES DATA

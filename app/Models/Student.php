@@ -13,11 +13,10 @@ class Student extends Model
 
     protected $fillable = [
         'school_id',
-        'student_name',
-        'nisn',
-        'class',
-        'gender',
-        'birth_date',
+        'name',
+        'class_id',
+        'age',
+        'grade'
     ];
 
     public function school()
@@ -33,5 +32,10 @@ class Student extends Model
     public function feedbacks()
     {
         return $this->hasMany(Feedback::class, 'student_id', 'student_id');
+    }
+    
+    public function classes()
+    {
+        return $this->belongsTo(Classes::class, 'class_id', 'class_id');
     }
 }

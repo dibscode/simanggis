@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('students', function (Blueprint $table) {
             $table->bigIncrements('student_id');
             $table->unsignedBigInteger('school_id');
+            $table->unsignedBigInteger('class_id')->nullable();
             $table->string('name', 255);
             $table->string('grade', 10);
             $table->integer('age');
@@ -21,6 +22,7 @@ return new class extends Migration
             $table->timestamps();
 
             $table->foreign('school_id')->references('school_id')->on('schools')->onDelete('cascade');
+            $table->foreign('class_id')->references('class_id')->on('classes')->onDelete('set null');
         });
     }
 
