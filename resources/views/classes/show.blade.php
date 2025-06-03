@@ -17,8 +17,8 @@
   <div class="flex h-screen">
 
     <!-- Sidebar -->
-    <aside class="w-64 bg-white shadow-md hidden md:block">
-      <div class="p-6 font-bold text-xl text-blue-600 border-b">Admin Panel</div>
+    <aside class="hidden w-64 bg-white shadow-md md:block">
+      <div class="p-6 text-xl font-bold text-blue-600 border-b">Admin Panel</div>
       <nav class="p-4">
         <ul class="space-y-2">
           <li><a href="#" class="block px-4 py-2 rounded hover:bg-blue-100">Dashboard</a></li>
@@ -31,9 +31,9 @@
     </aside>
 
     <!-- Main content -->
-    <div class="flex-1 flex flex-col">
+    <div class="flex flex-col flex-1">
       <!-- Topbar -->
-      <header class="bg-white shadow px-6 py-4 flex justify-between items-center">
+      <header class="flex items-center justify-between px-6 py-4 bg-white shadow">
         <h1 class="text-xl font-semibold">Detail Kelas</h1>
         <div>
           <button class="text-sm text-gray-600 hover:text-blue-600">Keluar</button>
@@ -46,17 +46,17 @@
           <a href="{{ route('class') }}" class="text-blue-600 hover:underline">&larr; Kembali ke Daftar Kelas</a>
         </div>
 
-        <div class="bg-white rounded shadow p-6">
-          <h2 class="text-2xl font-bold mb-4">Detail Kelas: X IPA 1</h2>
+        <div class="p-6 bg-white rounded shadow">
+          <h2 class="mb-4 text-2xl font-bold">Detail Kelas: {{$class->class_name}}</h2>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
             <div>
               <p class="text-gray-600">Nama Kelas:</p>
-              <p class="font-semibold text-gray-900">X IPA 1</p>
+              <p class="font-semibold text-gray-900">{{$class->class_name}}</p>
             </div>
             <div>
               <p class="text-gray-600">Sekolah:</p>
-              <p class="font-semibold text-gray-900">SMA Negeri 1</p>
+              <p class="font-semibold text-gray-900">{{$class->school->school_name}}</p>
             </div>
             <div>
               <p class="text-gray-600">Jumlah Siswa:</p>
@@ -64,13 +64,13 @@
             </div>
             <div>
               <p class="text-gray-600">Wali Kelas:</p>
-              <p class="font-semibold text-gray-900">Ibu Siti Aminah</p>
+              <p class="font-semibold text-gray-900">{{$class->teacher->name}}</p>
             </div>
           </div>
 
           <div class="mt-6">
-            <h3 class="text-xl font-semibold mb-2">Deskripsi:</h3>
-            <p class="text-gray-700">Kelas unggulan untuk jurusan IPA dengan fokus pada sains dan matematika.</p>
+            <h3 class="mb-2 text-xl font-semibold">Deskripsi:</h3>
+            <p class="text-gray-700">{{$class->description}}</p>
           </div>
         </div>
       </main>

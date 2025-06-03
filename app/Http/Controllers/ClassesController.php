@@ -117,6 +117,6 @@ class ClassesController extends Controller
         $class = Classes::findOrFail($id);
         $class->delete();
 
-        return redirect()->route('classes.index')->with('success', 'Kelas berhasil dihapus.');
+        return redirect()->route('class')->with('success', 'Kelas berhasil dihapus.');
     }
 }

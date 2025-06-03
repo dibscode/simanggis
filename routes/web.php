@@ -49,7 +49,7 @@ Route::middleware(['auth', 'checkRole:admin'])->group(function () {
     Route::delete('/teachers/delete/{id}', [TeacherController::class, 'destroy'])->name('teachers.deleteData');
     Route::get('/teachers/detail/{id}', [TeacherController::class, 'show'])->name('teachers.detail');
 
-    // STUDENTS DATA 
+    // STUDENTS DATA
     Route::get('/students', [StudentController::class, 'index'])->name('students');
     Route::get('/students/add', [StudentController::class, 'create'])->name('students.addForm');
     Route::post('/students/add', [StudentController::class, 'store'])->name('students.addData');
@@ -57,7 +57,7 @@ Route::middleware(['auth', 'checkRole:admin'])->group(function () {
     Route::put('/students/edit/{id}', [StudentController::class, 'update'])->name('students.editData');
     Route::delete('/students/delete/{id}', [StudentController::class, 'destroy'])->name('students.deleteData');
     Route::get('/students/detail/{id}', [StudentController::class, 'show'])->name('students.detail');
-    
+
 
     // CLASSES DATA
     Route::get('/class', [ClassesController::class, 'index'])->name('class');
@@ -65,9 +65,8 @@ Route::middleware(['auth', 'checkRole:admin'])->group(function () {
     Route::put('/class/edit/{id}', [ClassesController::class, 'update'])->name('class.update');
     Route::get('/class/add', [ClassesController::class, 'create'])->name('class.add');
     Route::post('/class/add', [ClassesController::class, 'store'])->name('class.addData');
-    Route::get('/class/detail', function () {
-        return view('classes.show');
-    })->name('class.detail');
+    Route::delete('/class/delete/{id}', [ClassesController::class, 'destroy'])->name('class.delete');
+    Route::get('/class/detail/{id}', [ClassesController::class, 'show'])->name('class.detail');
 
 });
 

@@ -14,19 +14,20 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans text-gray-900 antialiased">
+    <body class="font-sans antialiased text-gray-900">
 
     <!--"bg-gray-100" menghapus bagian tersebut pada class untuk screen agar semua putih-->
-        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 ">
+        <div class="flex flex-col items-center min-h-screen pt-6 sm:justify-center sm:pt-0 ">
             <div>
                 <a href="/">
-                    <!-- <x-application-logo class="w-20 h-20 fill-current text-gray-500" /> <menghapus logo laravel di scrip ini> -->
+                    <!-- <x-application-logo class="w-20 h-20 text-gray-500 fill-current" /> <menghapus logo laravel di scrip ini> -->
                 </a>
             </div>
 
-            <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-2x1 p-8 overflow-hidden sm:rounded-lg">
+            <div class="w-full p-8 px-6 py-4 mt-6 overflow-hidden bg-white sm:max-w-md shadow-2x1 sm:rounded-lg">
                 {{ $slot }}
             </div>
         </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
     </body>
 </html>
