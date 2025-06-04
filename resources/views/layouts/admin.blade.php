@@ -36,8 +36,8 @@
                     </li>
                     <li><a href="{{ route('students') }}" class="block px-4 py-2 rounded {{ request()->routeIs('students*') ? 'bg-blue-600 text-white' : 'hover:bg-blue-100' }}">Daftar
                             Murid</a></li>
-                    <li><a href="{{ route('school.data') }}"
-                            class="block px-4 py-2 rounded hover:bg-blue-100">Distribusi Makan</a></li>
+                    <li><a href="{{ route('meals') }}"
+                            class="block px-4 py-2 rounded {{ request()->routeIs('meals*') ? 'bg-blue-600 text-white' : 'hover:bg-blue-100' }}">Distribusi Makan</a></li>
                 </ul>
             </nav>
         </aside>

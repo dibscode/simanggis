@@ -7,6 +7,7 @@ use App\Http\Controllers\MealDistributionController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\ClassesController;
 use App\Http\Controllers\TeacherController;
+use App\Models\MealDistribution;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -76,8 +77,12 @@ Route::middleware(['auth', 'checkRole:guru'])->group(function () {
 
 
 Route::middleware(['auth', 'checkRole:admin,operator'])->group(function () {
+    Route::get('/meals', [MealDistributionController::class, 'index'])->name('meals');
+    Route::get('/meals/create', [MealDistributionController::class, 'create'])->name('meals.create');
+    Route::post('/meals/create', [MealDistributionController::class, 'store'])->name('meals.store');
     // halaman yang boleh diakses oleh admin & guru
 });
+
 
 
 
