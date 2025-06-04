@@ -20,24 +20,23 @@
             <div class="p-6 font-bold text-xl text-blue-600 border-b">Admin Panel</div>
             <nav class="p-4">
                 <ul class="space-y-2">
-                    <li><a href="{{ route('school.data') }}"
-                            class="block px-4 py-2 rounded hover:bg-blue-100">Dashboard</a></li>
-                    <li><a href="{{ route('school.data') }}"
-                            class="block px-4 py-2 rounded {{ request()->routeIs('school*') ? 'bg-blue-600 text-white' : 'hover:bg-blue-100' }}">
-                            Data Sekolah</a></li>
-                    <li><a href="{{ route('class') }}"
-                            class="block px-4 py-2 rounded {{ request()->routeIs('class*') ? 'bg-blue-600 text-white' : 'hover:bg-blue-100' }}">
-                            Daftar Kelas</a></li>
                     <li>
-                        <a href="{{ route('teachers') }}"
-                            class="block px-4 py-2 rounded {{ request()->routeIs('teachers*') ? 'bg-blue-600 text-white' : 'hover:bg-blue-100' }}">
-                            Daftar Guru
-                        </a>
+                        <a href="{{ route('admin.dashboard') }}" class="block px-4 py-2 rounded hover:bg-blue-100">Dashboard</a></li>
+                    <li>
+                        <a href="{{ route('school.data') }}" class="block px-4 py-2 rounded {{ request()->routeIs('school*') ? 'bg-blue-600 text-white' : 'hover:bg-blue-100' }}">Data Sekolah</a>
                     </li>
-                    <li><a href="{{ route('students') }}" class="block px-4 py-2 rounded {{ request()->routeIs('students*') ? 'bg-blue-600 text-white' : 'hover:bg-blue-100' }}">Daftar
-                            Murid</a></li>
-                    <li><a href="{{ route('meals') }}"
-                            class="block px-4 py-2 rounded {{ request()->routeIs('meals*') ? 'bg-blue-600 text-white' : 'hover:bg-blue-100' }}">Distribusi Makan</a></li>
+                    <li>
+                        <a href="{{ route('class') }}" class="block px-4 py-2 rounded {{ request()->routeIs('class*') ? 'bg-blue-600 text-white' : 'hover:bg-blue-100' }}">Data Kelas</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('teachers') }}" class="block px-4 py-2 rounded {{ request()->routeIs('teachers*') ? 'bg-blue-600 text-white' : 'hover:bg-blue-100' }}">Data Guru</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('students') }}" class="block px-4 py-2 rounded {{ request()->routeIs('students*') ? 'bg-blue-600 text-white' : 'hover:bg-blue-100' }}">Data Murid</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('meals') }}"class="block px-4 py-2 rounded {{ request()->routeIs('meals*') ? 'bg-blue-600 text-white' : 'hover:bg-blue-100' }}">Data Distribusi Makanan</a>
+                    </li>
                 </ul>
             </nav>
         </aside>

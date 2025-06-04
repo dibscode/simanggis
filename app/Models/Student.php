@@ -14,9 +14,7 @@ class Student extends Model
     protected $fillable = [
         'school_id',
         'name',
-        'class_id',
-        'age',
-        'grade'
+        'class_id'
     ];
 
     public function school()

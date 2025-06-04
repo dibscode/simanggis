@@ -7,6 +7,7 @@ use App\Http\Controllers\MealDistributionController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\ClassesController;
 use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\AdminController;
 use App\Models\MealDistribution;
 use Illuminate\Support\Facades\Route;
 
@@ -32,6 +33,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // Route::resource('classes', ClassesController::class);
 });
 
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/admin/dashboard', [App\Http\Controllers\AdminController::class, 'dashboard'])->name('admin.dashboard');
+    // ...route resource lainnya...
+});
 
 Route::middleware(['auth', 'checkRole:admin'])->group(function () {
     // halaman yang bisa diakses oleh admin!

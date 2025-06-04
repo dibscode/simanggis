@@ -30,7 +30,7 @@
                     class="w-full h-full object-cover"
                     style="pointer-events: none;"></video>
                 <!-- Overlay gelap agar teks tetap terbaca -->
-                <div class="absolute inset-0 bg-black opacity-80"></div>
+                <div class="absolute inset-0 bg-black opacity-20"></div>
             </div>
         </div>
         <div class="relative px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56 z-10 flex flex-col items-center justify-center w-full">
@@ -57,33 +57,32 @@
         </div>
     </section>
 
-<section class="bg-white dark:bg-gray-900">
-    <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
-        <img class="w-full dark:hidden" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup.svg" alt="dashboard image">
-        <img class="w-full hidden dark:block" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup-dark.svg" alt="dashboard image">
-        <div class="mt-4 md:mt-0">
-            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">About Us.</h2>
-            <p class="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">
-               Simanggis (Sistem Makan Bergizi Gratis) adalah platform digital yang dibangun untuk mendukung dan memperkuat program makan siang dan susu gratis untuk anak-anak Indonesia, sebagaimana diusung oleh Presiden Republik Indonesia.
-                Kami percaya bahwa pemenuhan gizi yang baik sejak dini adalah fondasi utama bagi masa depan bangsa. Didirikan dengan semangat kepedulian sosial dan kemajuan teknologi, Simanggis hadir untuk mempermudah berbagai pihak—baik lembaga pemerintah, organisasi sosial, maupun relawan—dalam memonitor, mencatat, dan mengelola distribusi bantuan makanan bergizi dengan lebih efisien dan transparan.
-
-            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Visi.</h2>
-            <p class="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">
-               Mewujudkan masyarakat yang sehat dan sejahtera melalui pendataan dan distribusi makanan bergizi gratis yang merata dan tepat sasaran.
-
-            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Misi.</h2>
-            <p class="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">
-            Membangun sistem pendataan yang akurat dan mudah digunakan untuk semua pihak yang terlibat. <br>
-            Mendukung program-program gizi dari pemerintah dan komunitas dengan teknologi yang responsif. <br>
-            Meningkatkan kesadaran akan pentingnya gizi melalui informasi yang dapat diakses oleh publik. <br>
-
-            <a href="#" class="inline-flex items-center text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900">
-                Get started
-                <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-            </a>
+    <section class="bg-white">
+        <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+            <img class="w-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup.svg" alt="dashboard image" data-aos="fade-right">
+            <div class="mt-4 md:mt-0" data-aos="fade-left">
+                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">About Us.</h2>
+                <p class="mb-6 font-light text-gray-600 md:text-lg">
+                Simanggis (Sistem Makan Bergizi Gratis) adalah platform digital yang dibangun untuk mendukung dan memperkuat program makan siang dan susu gratis untuk anak-anak Indonesia, sebagaimana diusung oleh Presiden Republik Indonesia.
+                    Kami percaya bahwa pemenuhan gizi yang baik sejak dini adalah fondasi utama bagi masa depan bangsa. Didirikan dengan semangat kepedulian sosial dan kemajuan teknologi, Simanggis hadir untuk mempermudah berbagai pihak—baik lembaga pemerintah, organisasi sosial, maupun relawan—dalam memonitor, mencatat, dan mengelola distribusi bantuan makanan bergizi dengan lebih efisien dan transparan.
+                </p>
+                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">Visi.</h2>
+                <p class="mb-6 font-light text-gray-600 md:text-lg">
+                Mewujudkan masyarakat yang sehat dan sejahtera melalui pendataan dan distribusi makanan bergizi gratis yang merata dan tepat sasaran.
+                </p>
+                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">Misi.</h2>
+                <p class="mb-6 font-light text-gray-600 md:text-lg">
+                    Membangun sistem pendataan yang akurat dan mudah digunakan untuk semua pihak yang terlibat. <br>
+                    Mendukung program-program gizi dari pemerintah dan komunitas dengan teknologi yang responsif. <br>
+                    Meningkatkan kesadaran akan pentingnya gizi melalui informasi yang dapat diakses oleh publik. <br>
+                </p>
+                <a href="#" class="inline-flex items-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                    Get started
+                    <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                </a>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
 @include('layouts.footer')
 

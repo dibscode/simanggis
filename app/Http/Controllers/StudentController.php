@@ -30,30 +30,20 @@ class StudentController extends Controller
     {
         $request->validate([
             'class_id' => 'nullable|exists:classes,class_id',
-            'name' => 'required|string|max:255',
-            'grade' => 'numeric|min:1|max:12',
-            'age' => 'numeric|min:1|max:22'
+            'name' => 'required|string|max:255'
         ]);
         Student::create([
             'school_id' => Auth::user()->school_id,
             'class_id' => $request->class_id,
-            'name' => $request->name,
-            'grade' => $request->grade,
-            'age' => $request->age,
+            'name' => $request->name
         ]);
         return redirect()->route('students')->with('success', 'Student created successfully.');
     }
 
-    // public function show($id)
-    // {
-    //     $student = Student::with('school')->findOrFail($id);
-    //     return view('students.show', compact('student'));
-    // }
-
     public function edit($id)
     {
-        // $student = Student::findOrFail($id);
-        // $schools = School::all();
+        $student = Student::findOrFail($id);
+        $schools = School::all();
         return view('students.edit', compact('student', 'schools'));
     }
 
@@ -61,14 +51,11 @@ class StudentController extends Controller
     {
         $request->validate([
             'school_id' => 'required|exists:schools,school_id',
-            'student_name' => 'required|string|max:255',
-            'nisn' => 'required|string|max:20',
-            'class' => 'required|string|max:50',
-            'gender' => 'required|string|max:10',
-            'birth_date' => 'required|date',
+            'name' => 'required|string|max:255',
+            'class_id' => 'required|string|max:50'
         ]);
-        // $student = Student::findOrFail($id);
-        // $student->update($request->all());
+        $student = Student::findOrFail($id);
+        $student->update($request->all());
         return redirect()->route('students.index')->with('success', 'Student updated successfully.');
     }
 

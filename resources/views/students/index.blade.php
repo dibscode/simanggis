@@ -46,30 +46,6 @@
                         </td>
                     </tr>
                 @endforeach
-                <tr class="border-b">
-                    <td class="px-4 py-2">1</td>
-                    <td class="px-4 py-2">Aditya Ega</td>
-                    <td class="px-4 py-2">Kelas 7A</td>
-                    <td class="px-4 py-2 flex gap-2">
-                        <a href="#" class="text-green-600 hover:underline">Detail</a>
-                        <a href="#" class="text-blue-600 hover:underline">Edit</a>
-                        <button onclick="confirm('Yakin ingin menghapus siswa ini?')" class="text-red-600 hover:underline">
-                            Hapus
-                        </button>
-                    </td>
-                </tr>
-                <tr class="border-b">
-                    <td class="px-4 py-2">2</td>
-                    <td class="px-4 py-2">Siti Aminah</td>
-                    <td class="px-4 py-2">Kelas 8B</td>
-                    <td class="px-4 py-2 flex gap-2">
-                        <a href="#" class="text-green-600 hover:underline">Detail</a>
-                        <a href="#" class="text-blue-600 hover:underline">Edit</a>
-                        <button onclick="confirm('Yakin ingin menghapus siswa ini?')" class="text-red-600 hover:underline">
-                            Hapus
-                        </button>
-                    </td>
-                </tr>
             </tbody>
         </table>
     </div>

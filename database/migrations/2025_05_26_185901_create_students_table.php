@@ -16,8 +16,6 @@ return new class extends Migration
             $table->unsignedBigInteger('school_id');
             $table->unsignedBigInteger('class_id')->nullable();
             $table->string('name', 255);
-            $table->string('grade', 10);
-            $table->integer('age');
             $table->enum('meal_status', ['received', 'not_received']);
             $table->timestamps();
 
