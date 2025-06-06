@@ -1,36 +1,49 @@
-@extends('layouts.admin')
+<!DOCTYPE html>
+<html lang="id">
 
-@section('title', 'Informasi Sekolah')
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detail Kelas</title>
+  <!-- Flowbite -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
 
-@section('content')
+<body class="bg-gray-100">
+
+  <div class="flex h-screen">
+
+    <!-- Sidebar -->
+    <aside class="hidden w-64 bg-white shadow-md md:block">
+      <div class="p-6 text-xl font-bold text-blue-600 border-b">Admin Panel</div>
+      <nav class="p-4">
+        <ul class="space-y-2">
+          <li><a href="#" class="block px-4 py-2 rounded hover:bg-blue-100">Dashboard</a></li>
+          <li><a href="#" class="block px-4 py-2 rounded hover:bg-blue-100">Data Sekolah</a></li>
+          <li><a href="#" class="block px-4 py-2 rounded hover:bg-blue-100">Data Kelas</a></li>
+          <li><a href="#" class="block px-4 py-2 rounded hover:bg-blue-100">Tambah Guru</a></li>
+          <li><a href="#" class="block px-4 py-2 rounded hover:bg-blue-100">Distribusi Makan</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main content -->
+    <div class="flex flex-col flex-1">
+      <!-- Topbar -->
+      <header class="flex items-center justify-between px-6 py-4 bg-white shadow">
+        <h1 class="text-xl font-semibold">Detail Kelas</h1>
+        <div>
+          <button class="text-sm text-gray-600 hover:text-blue-600">Keluar</button>
+        </div>
+      </header>
 
       <!-- Page content -->
       <main class="p-6 overflow-y-auto">
         <div class="mb-6">
-            <nav class="flex text-sm text-gray-600" aria-label="Breadcrumb">
-                <ol class="inline-flex items-center space-x-1 md:space-x-3">
-                    <li class="inline-flex items-center">
-                        <a href="{{ route('admin.dashboard') }}" class="inline-flex items-center text-blue-600 hover:underline">
-                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0h6"></path></svg>
-                            Dashboard
-                        </a>
-                    </li>
-                    <li>
-                        <span class="mx-2 text-gray-400">/</span>
-                    </li>
-                    <li class="inline-flex items-center">
-                        <a href="{{ route('class') }}" class="text-blue-600 hover:underline">
-                            Data Kelas
-                        </a>
-                    </li>
-                    <li>
-                        <span class="mx-2 text-gray-400">/</span>
-                    </li>
-                    <li class="inline-flex items-center text-gray-500">
-                        Detail Kelas
-                    </li>
-                </ol>
-            </nav>
+          <a href="{{ route('class') }}" class="text-blue-600 hover:underline">&larr; Kembali ke Daftar Kelas</a>
         </div>
 
         <div class="p-6 bg-white rounded shadow">
@@ -47,7 +60,7 @@
             </div>
             <div>
               <p class="text-gray-600">Jumlah Siswa:</p>
-              <p class="font-semibold text-gray-900">{{ $class->students->count() }}</p>
+              <p class="font-semibold text-gray-900">32</p>
             </div>
             <div>
               <p class="text-gray-600">Wali Kelas:</p>
@@ -61,4 +74,9 @@
           </div>
         </div>
       </main>
- @endsection
+    </div>
+  </div>
+
+</body>
+
+</html>

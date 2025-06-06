@@ -4,30 +4,7 @@
 
 @section('content')
     <div class="mb-6">
-        <nav class="flex text-sm text-gray-600" aria-label="Breadcrumb">
-            <ol class="inline-flex items-center space-x-1 md:space-x-3">
-                <li class="inline-flex items-center">
-                    <a href="{{ route('admin.dashboard') }}" class="inline-flex items-center text-blue-600 hover:underline">
-                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0h6"></path></svg>
-                        Dashboard
-                    </a>
-                </li>
-                <li>
-                    <span class="mx-2 text-gray-400">/</span>
-                </li>
-                <li class="inline-flex items-center">
-                    <a href="{{ route('school.data') }}" class="text-blue-600 hover:underline">
-                        Data Sekolah
-                    </a>
-                </li>
-                <li>
-                    <span class="mx-2 text-gray-400">/</span>
-                </li>
-                <li class="inline-flex items-center text-gray-500">
-                    Edit Sekolah
-                </li>
-            </ol>
-        </nav>
+        <a href="{{ route('school.data') }}" class="text-blue-600 hover:underline">&larr; Kembali ke Informasi Sekolah</a>
     </div>
 
     <div class="bg-white rounded shadow p-6 max-w-xl mx-auto">
