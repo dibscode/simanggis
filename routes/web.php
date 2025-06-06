@@ -78,7 +78,7 @@ Route::middleware(['auth', 'checkRole:admin'])->prefix('admin')->group(function 
 // -----------------------------
 // Guru Only Routes
 // -----------------------------
-Route::middleware(['auth', 'checkRole:guru'])->group(function () {
+Route::middleware(['auth', 'checkRole:guru'])->prefix('teacher')->group(function () {
     // Tambahkan route khusus guru di sini
    
 });
