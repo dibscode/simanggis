@@ -30,7 +30,7 @@ class AuthenticatedSessionController extends Controller
         $user = Auth::user();
 
         if ($user->role === 'guru') {
-            return redirect()->intended(route('teacher.dashboard'));
+            return redirect()->intended(route('meal.check.index'));
         }
 
         // Default: admin

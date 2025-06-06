@@ -10,7 +10,8 @@ use App\Http\Controllers\{
     FeedbackController,
     ClassesController,
     TeacherController,
-    AdminController
+    AdminController,
+    MealCheckController
 };
 
 // -----------------------------
@@ -80,7 +81,7 @@ Route::middleware(['auth', 'checkRole:admin'])->prefix('admin')->group(function 
 // -----------------------------
 Route::middleware(['auth', 'checkRole:guru'])->prefix('teacher')->group(function () {
     // Tambahkan route khusus guru di sini
-   
+    Route::get('/meal-check', [MealCheckController::class, 'index'])->name('meal.check.index');
 });
 
 // -----------------------------

@@ -24,6 +24,6 @@ class MealCheckController extends Controller
             ->orderBy('meal_date', 'desc')
             ->get();
 
-        return view('teacher.meal_check.index', compact('rekap'));
+        return view('meal_check.index', compact('rekap'));
     }
 }
