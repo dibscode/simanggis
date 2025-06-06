@@ -32,8 +32,8 @@
                         <td class="px-4 py-2">{{ $student->name }}</td>
                         <td class="px-4 py-2">{{ $student->classes->class_name ?? 'Belum Mempunyai Kelas!' }}</td>
                         <td class="px-4 py-2 flex gap-2">
-                            <a href="#" class="text-green-600 hover:underline">Detail</a>
-                            <a href="#" class="text-blue-600 hover:underline">Edit</a>
+                            <a href="{{ route('students.show', $student->student_id) }}" class="text-green-600 hover:underline">Detail</a>
+                            <a href="{{ route('students.editForm', $student->student_id) }}" class="text-blue-600 hover:underline">Edit</a>
                             {{-- <form action="#" method="POST" onsubmit="return confirm('Yakin ingin menghapus siswa ini?');">
                                 @csrf
                                 @method('DELETE')

@@ -40,23 +40,27 @@ class StudentController extends Controller
         return redirect()->route('students')->with('success', 'Student created successfully.');
     }
 
-    public function edit($id)
+   public function edit($id)
     {
         $student = Student::findOrFail($id);
-        $schools = School::all();
-        return view('students.edit', compact('student', 'schools'));
+        $classes = \App\Models\Classes::where('school_id', $student->school_id)->get();
+        return view('students.edit', compact('student', 'classes'));
     }
 
     public function update(Request $request, $id)
     {
         $request->validate([
-            'school_id' => 'required|exists:schools,school_id',
             'name' => 'required|string|max:255',
-            'class_id' => 'required|string|max:50'
+            'class_id' => 'required|exists:classes,class_id',
+            // Hapus validasi 'school_id'
         ]);
         $student = Student::findOrFail($id);
-        $student->update($request->all());
-        return redirect()->route('students.index')->with('success', 'Student updated successfully.');
+        $student->update([
+            'name' => $request->name,
+            'class_id' => $request->class_id,
+            'school_id' => Auth::user()->school_id, // pastikan selalu sesuai user login
+        ]);
+        return redirect()->route('students')->with('success', 'Student updated successfully.');
     }
 
     public function destroy($id)
@@ -64,5 +68,10 @@ class StudentController extends Controller
         $student = Student::findOrFail($id);
         $student->delete();
         return redirect()->route('students.index')->with('success', 'Student deleted successfully.');
+    }
+    public function show($id)
+    {
+        $student = Student::with('classes')->findOrFail($id);
+        return view('students.show', compact('student'));
     }
 }

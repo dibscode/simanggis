@@ -62,8 +62,7 @@ Route::middleware(['auth', 'checkRole:admin'])->group(function () {
     Route::get('/students/edit/{id}', [StudentController::class, 'edit'])->name('students.editForm');
     Route::put('/students/edit/{id}', [StudentController::class, 'update'])->name('students.editData');
     Route::delete('/students/delete/{id}', [StudentController::class, 'destroy'])->name('students.deleteData');
-    Route::get('/students/detail/{id}', [StudentController::class, 'show'])->name('students.detail');
-
+    Route::get('/students/show/{id}', [StudentController::class, 'show'])->name('students.show');
 
     // CLASSES DATA
     Route::get('/class', [ClassesController::class, 'index'])->name('class');
