@@ -16,6 +16,7 @@ class MealDistribution extends Model
         'school_id',
         'student_id',
         'teacher_id',
+        'class_id',
         'meal_date',
         'status',
     ];
@@ -33,5 +34,10 @@ class MealDistribution extends Model
     public function teacher()
     {
         return $this->belongsTo(User::class, 'teacher_id', 'id');
+    }
+
+    public function class()
+    {
+        return $this->belongsTo(Classes::class, 'class_id');
     }
 }

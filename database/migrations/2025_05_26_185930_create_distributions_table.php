@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('school_id');
             $table->unsignedBigInteger('student_id');
             $table->unsignedBigInteger('teacher_id'); // guru penanggung jawab
+            $table->unsignedBigInteger('class_id');
             $table->date('meal_date');
             $table->enum('status', ['received', 'not_received'])->default('not_received');
             $table->timestamps();
@@ -23,6 +24,7 @@ return new class extends Migration
             // Foreign keys
             $table->foreign('school_id')->references('school_id')->on('schools')->onDelete('cascade');
             $table->foreign('student_id')->references('student_id')->on('students')->onDelete('cascade');
+            $table->foreign('class_id')->references('class_id')->on('classes')->onDelete('cascade');
             $table->foreign('teacher_id')->references('id')->on('users')->onDelete('cascade');
 
             // Constraint: 1 siswa hanya bisa menerima 1 meal per tanggal
