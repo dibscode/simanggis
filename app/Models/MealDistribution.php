@@ -14,13 +14,24 @@ class MealDistribution extends Model
 
     protected $fillable = [
         'school_id',
+        'student_id',
+        'teacher_id',
         'meal_date',
-        'total_students',
-        'meal_type',
+        'status',
     ];
 
     public function school()
     {
         return $this->belongsTo(School::class, 'school_id', 'school_id');
+    }
+
+    public function student()
+    {
+        return $this->belongsTo(Student::class, 'student_id', 'student_id');
+    }
+
+    public function teacher()
+    {
+        return $this->belongsTo(User::class, 'teacher_id', 'id');
     }
 }

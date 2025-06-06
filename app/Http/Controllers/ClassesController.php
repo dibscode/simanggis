@@ -86,7 +86,7 @@ class ClassesController extends Controller
         $class->update($validatedData);
 
         return redirect()
-            ->route('classes.index')
+            ->route('class')
             ->with('success', "Kelas '{$class->class_name}' berhasil diupdate.");
     }
 

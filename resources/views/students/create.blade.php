@@ -30,28 +30,13 @@
                     <select name="class_id" id="class_id"
                         class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                         >
-                        <option value="">-- Pilih Kelas --</option>
+                        <option value="">Pilih Kelas</option>
                         @foreach ($classes as $class)
                             <option value="{{ $class->class_id }}">{{ $class->class_name }}</option>
                         @endforeach
                     </select>
                 </div>
-
-                <div class="mb-5">
-                    <label for="grade" class="block text-sm font-semibold text-gray-700 mb-1">Kelas Saat Ini
-                        (Tingkat)</label>
-                    <input type="number" name="grade" id="grade"
-                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        placeholder="Contoh: 7" required>
-                </div>
-
-                <div class="mb-5">
-                    <label for="age" class="block text-sm font-semibold text-gray-700 mb-1">Usia</label>
-                    <input type="number" name="age" id="age"
-                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        required>
-                </div>
-
+                
                 <input type="hidden" name="meal_status" value="">
 
                 <div class="flex justify-end mt-6 space-x-3">

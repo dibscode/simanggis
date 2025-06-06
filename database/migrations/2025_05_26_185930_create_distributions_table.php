@@ -14,12 +14,19 @@ return new class extends Migration
         Schema::create('meal_distributions', function (Blueprint $table) {
             $table->bigIncrements('distribution_id');
             $table->unsignedBigInteger('school_id');
+            $table->unsignedBigInteger('student_id');
+            $table->unsignedBigInteger('teacher_id'); // guru penanggung jawab
             $table->date('meal_date');
-            $table->integer('total_students');
-            $table->string('meal_type', 50);
+            $table->enum('status', ['received', 'not_received'])->default('not_received');
             $table->timestamps();
 
+            // Foreign keys
             $table->foreign('school_id')->references('school_id')->on('schools')->onDelete('cascade');
+            $table->foreign('student_id')->references('student_id')->on('students')->onDelete('cascade');
+            $table->foreign('teacher_id')->references('id')->on('users')->onDelete('cascade');
+
+            // Constraint: 1 siswa hanya bisa menerima 1 meal per tanggal
+            $table->unique(['student_id', 'meal_date']);
         });
     }
 
@@ -28,6 +35,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('distributions');
+        Schema::dropIfExists('meal_distributions');
     }
 };
