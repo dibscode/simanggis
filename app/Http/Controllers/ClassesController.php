@@ -10,6 +10,9 @@ use Illuminate\Support\Facades\Auth;
 
 class ClassesController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     */
     public function index()
     {
         // Ambil semua kelas beserta sekolahnya
@@ -20,6 +23,9 @@ class ClassesController extends Controller
         return view('classes.index', compact('classes'));
     }
 
+    /**
+     * Show the form for creating a new resource.
+     */
     public function create()
     {
         // Ambil semua guru untuk dropdown (jika diperlukan)
@@ -30,6 +36,9 @@ class ClassesController extends Controller
         return view('classes.create', compact('teachers'));
     }
 
+    /**
+     * Store a newly created resource in storage.
+     */
     public function store(Request $request)
     {
         $school_id = Auth::user()->school_id;
@@ -52,12 +61,18 @@ class ClassesController extends Controller
     }
 
 
+    /**
+     * Display the specified resource.
+     */
     public function show($id)
     {
         $class = Classes::with('school', 'students')->findOrFail($id);
         return view('classes.show', compact('class'));
     }
 
+    /**
+     * Show the form for editing the specified resource.
+     */
     public function edit($id)
     {
         $class = Classes::findOrFail($id);
@@ -74,6 +89,9 @@ class ClassesController extends Controller
     }
 
 
+    /**
+     * Update the specified resource in storage.
+     */
     public function update(Request $request, $id)
     {
         $validatedData = $request->validate([
@@ -91,6 +109,9 @@ class ClassesController extends Controller
     }
 
 
+    /**
+     * Remove the specified resource from storage.
+     */
     public function destroy($id)
     {
         $class = Classes::findOrFail($id);
