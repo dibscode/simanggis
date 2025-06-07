@@ -19,7 +19,7 @@ class AdminController extends Controller
 
         // Statistik siswa sudah dapat makan gratis (hari ini)
         $siswaSudahMakan = MealDistribution::whereDate('meal_date', now()->toDateString())->where('status', 'received')->count();
-
+        
         return view('admin.dashboard', compact(
             'totalSekolah',
             'totalGuru',

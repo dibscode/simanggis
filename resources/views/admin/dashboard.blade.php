@@ -62,11 +62,13 @@
         </div>
         <canvas id="statistikChart" height="100"></canvas>
     </div>
+
 @endsection
 
 @push('scripts')
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
+    console.log("HELLOOOOw!")
     // Data dari controller
     const dataStatistik = {
         hari: {
@@ -76,13 +78,13 @@
         },
         minggu: {
             labels: {!! json_encode($labelsMinggu ?? ['Sen','Sel','Rab','Kam','Jum','Sab','Min']) !!},
-            sudah: {!! json_encode($dataMingguSudah ?? [0,0,0,0,0,0,0]) !!},
-            belum: {!! json_encode($dataMingguBelum ?? [0,0,0,0,0,0,0]) !!}
+            sudah: {!! json_encode($dataMingguSudah ?? [28,30,20,22,25,26,29]) !!},
+            belum: {!! json_encode($dataMingguBelum ?? [10,8,18,16,13,12,9]) !!}
         },
         bulan: {
-            labels: {!! json_encode($labelsBulan ?? ['1','2','3','4','5','6','7']) !!},
-            sudah: {!! json_encode($dataBulanSudah ?? [0,0,0,0,0,0,0]) !!},
-            belum: {!! json_encode($dataBulanBelum ?? [0,0,0,0,0,0,0]) !!}
+            labels: {!! json_encode($labelsBulan ?? ['Week 1','Week 2','Week 3','Week 4']) !!},
+            sudah: {!! json_encode($dataBulanSudah ?? [30,25,35,36]) !!},
+            belum: {!! json_encode($dataBulanBelum ?? [15,20,10,9]) !!}
         }
     };
 
@@ -151,5 +153,7 @@
         statistikChart.data.datasets[1].data = dataStatistik[val].belum;
         statistikChart.update();
     });
+
+    
 </script>
 @endpush

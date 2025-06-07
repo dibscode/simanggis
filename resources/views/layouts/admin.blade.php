@@ -83,5 +83,6 @@
     <div class="p-4 md:ml-64 pt-8">
         @yield('content')
     </div>
+    @stack('scripts')
 </body>
 </html>
