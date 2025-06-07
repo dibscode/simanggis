@@ -57,10 +57,14 @@
                                 @method('DELETE')
                                 <button type="submit" class="text-red-600 hover:underline">Hapus</button>
                             </form> --}}
-                            <button onclick="confirm('Yakin ingin menghapus siswa ini?')"
+                            <form action="{{ route('students.deleteData', $student->student_id) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus siswa ini?');">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="text-red-600 hover:underline">Hapus</button>
+                            <!-- <button onclick="confirm('Yakin ingin menghapus siswa ini?')"
                                 class="text-red-600 hover:underline">
                                 Hapus
-                            </button>
+                            </button>  -->
                         </td>
                     </tr>
                 @endforeach

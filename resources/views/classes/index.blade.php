@@ -47,18 +47,24 @@
             </thead>
             <tbody>
                 @foreach ($classes as $class)
+                    @php
+                        // Decode $class if it's a JSON string
+                        if (is_string($class)) {
+                            $class = json_decode($class);
+                        }
+                    @endphp
                     <tr>
                         <td class="px-4 py-2 border">{{ $loop->iteration }}</td>
-                        <td class="px-4 py-2 border">{{ $class->class_name }}</td>
+                        <td class="px-4 py-2 border">{{ $class->class_name ?? '-' }}</td>
                         <td class="px-4 py-2 border">
-                            {{ $class->teacher->name ?? 'Belum ada wali kelas' }}
+                            {{ isset($class->teacher) && isset($class->teacher->name) ? $class->teacher->name : 'Belum ada wali kelas' }}
                         </td>
                         <td class="flex px-4 py-2 space-x-2 border">
-                            <a href="{{ route('class.detail', $class->class_id) }}"
+                            <a href="{{ route('class.detail', $class->class_id ?? '') }}"
                                class="text-blue-600 hover:underline">Detail</a>
-                            <a href="{{ route('class.edit', $class->class_id) }}"
+                            <a href="{{ route('class.edit', $class->class_id ?? '') }}"
                                class="text-yellow-600 hover:underline">Edit</a>
-                            <form action="{{ route('class.delete', $class->class_id) }}"
+                            <form action="{{ route('class.delete', $class->class_id ?? '') }}"
                                   method="POST"
                                   onsubmit="return confirm('Yakin hapus data ini?')">
                                 @csrf
