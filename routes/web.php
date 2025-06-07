@@ -96,14 +96,6 @@ Route::middleware(['auth', 'checkRole:admin,operator'])->prefix('meals')->group(
 });
 
 // -----------------------------
-// Logout
-// -----------------------------
-Route::get('/logout', function () {
-    Auth::logout();
-    return redirect('/');
-})->name('logout');
-
-// -----------------------------
 // Auth scaffolding routes
 // -----------------------------
 require __DIR__ . '/auth.php';
