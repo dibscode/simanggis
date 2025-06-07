@@ -78,6 +78,7 @@ class MealDistributionController extends Controller
                     'school_id'   => $schoolId,
                     'meal_date'   => $request->meal_date,
                     'student_id'  => $student->student_id,
+                    'class_id'    => $class->class_id,
                     'teacher_id'  => $teacherId,
                     'status'      => 'not_received'
                 ]);
