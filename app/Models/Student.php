@@ -16,7 +16,7 @@ class Student extends Model
         'name',
         'class_id'
     ];
-
+    
     public function school()
     {
         return $this->belongsTo(School::class, 'school_id', 'school_id');
@@ -31,7 +31,7 @@ class Student extends Model
     {
         return $this->hasMany(Feedback::class, 'student_id', 'student_id');
     }
-    
+
     public function classes()
     {
         return $this->belongsTo(Classes::class, 'class_id', 'class_id');

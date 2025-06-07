@@ -82,6 +82,8 @@ Route::middleware(['auth', 'checkRole:admin'])->prefix('admin')->group(function 
 Route::middleware(['auth', 'checkRole:guru'])->prefix('teacher')->group(function () {
     // Tambahkan route khusus guru di sini
     Route::get('/meal-check', [MealCheckController::class, 'index'])->name('meal.check.index');
+    Route::get('meal_check/{class_id}/{meal_date}', [MealCheckController::class, 'show'])->name('meal_check.absen');
+    Route::post('meal_check/absen', [MealCheckController::class, 'store'])->name('meal_check.absen.store');
 });
 
 // -----------------------------
