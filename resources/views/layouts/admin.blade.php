@@ -37,15 +37,15 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('class') }}" class="flex items-center p-2 rounded-lg {{ request()->routeIs('class*') ? 'bg-blue-600 text-white' : 'text-gray-900 hover:bg-blue-100' }}">
-                        <svg class="w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 10h16M4 14h16M4 18h16"></path></svg>
-                        <span class="ml-3">Data Kelas</span>
-                    </a>
-                </li>
-                <li>
                     <a href="{{ route('teachers') }}" class="flex items-center p-2 rounded-lg {{ request()->routeIs('teachers*') ? 'bg-blue-600 text-white' : 'text-gray-900 hover:bg-blue-100' }}">
                         <svg class="w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5.121 17.804A13.937 13.937 0 0112 15c2.485 0 4.797.755 6.879 2.047M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                         <span class="ml-3">Data Guru</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('class') }}" class="flex items-center p-2 rounded-lg {{ request()->routeIs('class*') ? 'bg-blue-600 text-white' : 'text-gray-900 hover:bg-blue-100' }}">
+                        <svg class="w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 10h16M4 14h16M4 18h16"></path></svg>
+                        <span class="ml-3">Data Kelas</span>
                     </a>
                 </li>
                 <li>
