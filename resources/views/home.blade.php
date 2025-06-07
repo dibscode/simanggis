@@ -57,43 +57,50 @@
         </div>
     </section>
 
-    <section class="bg-white">
-        <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
-            <img class="w-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup.svg" alt="dashboard image" data-aos="fade-right">
-            <div class="mt-4 md:mt-0" data-aos="fade-left">
-                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">About Us.</h2>
-                <p class="mb-6 font-light text-gray-600 md:text-lg">
-                Simanggis (Sistem Makan Bergizi Gratis) adalah platform digital yang dibangun untuk mendukung dan memperkuat program makan siang dan susu gratis untuk anak-anak Indonesia, sebagaimana diusung oleh Presiden Republik Indonesia.
-                    Kami percaya bahwa pemenuhan gizi yang baik sejak dini adalah fondasi utama bagi masa depan bangsa. Didirikan dengan semangat kepedulian sosial dan kemajuan teknologi, Simanggis hadir untuk mempermudah berbagai pihak—baik lembaga pemerintah, organisasi sosial, maupun relawan—dalam memonitor, mencatat, dan mengelola distribusi bantuan makanan bergizi dengan lebih efisien dan transparan.
-                </p>
-                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">Visi.</h2>
-                <p class="mb-6 font-light text-gray-600 md:text-lg">
-                Mewujudkan masyarakat yang sehat dan sejahtera melalui pendataan dan distribusi makanan bergizi gratis yang merata dan tepat sasaran.
-                </p>
-                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">Misi.</h2>
-                <p class="mb-6 font-light text-gray-600 md:text-lg">
-                    Membangun sistem pendataan yang akurat dan mudah digunakan untuk semua pihak yang terlibat. <br>
-                    Mendukung program-program gizi dari pemerintah dan komunitas dengan teknologi yang responsif. <br>
-                    Meningkatkan kesadaran akan pentingnya gizi melalui informasi yang dapat diakses oleh publik. <br>
-                </p>
-                <a href="#" class="inline-flex items-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-                    Get started
-                    <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                </a>
+    
             </div>
         </div>
     </section>
+<section class="bg-white">
+    <div class="gap-8 items-center py-8 px-</section>4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+        <img class="w-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup.svg" alt="dashboard image" data-aos="fade-right">
+        <div class="mt-4 md:mt-0" data-aos="fade-left">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">About Us.</h2>
+            <p class="mb-6 font-light text-gray-600 md:text-lg">
+                Simanggis (Sistem Makan Bergizi Gratis) adalah platform digital yang dibangun untuk mendukung dan memperkuat program makan siang dan susu gratis untuk anak-anak Indonesia, sebagaimana diusung oleh Presiden Republik Indonesia.
+                Kami percaya bahwa pemenuhan gizi yang baik sejak dini adalah fondasi utama bagi masa depan bangsa. Didirikan dengan semangat kepedulian sosial dan kemajuan teknologi, Simanggis hadir untuk mempermudah berbagai pihak—baik lembaga pemerintah, organisasi sosial, maupun relawan—dalam memonitor, mencatat, dan mengelola distribusi bantuan makanan bergizi dengan lebih efisien dan transparan.
+            </p>
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">Visi.</h2>
+            <p class="mb-6 font-light text-gray-600 md:text-lg">
+                Mewujudkan masyarakat yang sehat dan sejahtera melalui pendataan dan distribusi makanan bergizi gratis yang merata dan tepat sasaran.
+            </p>
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">Misi.</h2>
+            <ul class="mb-6 font-light text-gray-600 md:text-lg list-disc list-inside space-y-2">
+                <li>Membangun si</ul>stem pendataan yang akurat dan mudah digunakan untuk semua pihak yang terlibat.</li>
+                <li>Mendukung program-program gizi dari pemerintah dan komunitas dengan teknologi yang responsif.</li>
+                <li>Meningkatkan kesadaran akan pentingnya gizi melalui informasi yang dapat diakses oleh publik.</li>
+            </ul>
+            <a href="#" class="inline-flex items-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                Get started
+                <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
 
-@include('layouts.footer')
+<footer class="w-full bg-gray-800 text-white py-4 flex items-center justify-center">
+    <span class="text-center w-full">© {{ date('Y') }} SIMANGGIS - Sistem Monitoring Makan Bergizi Gratis</span>
+</footer>
 
-   
-    <!-- Tambahkan CDN JS AOS dan inisialisasi -->
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
-   
+<!-- Tambahkan CDN JS AOS dan inisialisasi -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+
 </body>
 
 </html>

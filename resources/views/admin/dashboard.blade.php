@@ -4,11 +4,12 @@
 
 @section('content')
         <div class="mb-6">
+            <h1 class="text-2xl font-bold text-gray-800">Selamat Datang di Dashboard</h1>
             <nav class="flex text-sm text-gray-600" aria-label="Breadcrumb">
                 <ol class="inline-flex items-center space-x-1 md:space-x-3">
                     <li class="inline-flex items-center">
                             <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0h6"></path></svg>
-                            Dashboard
+                            Pantau Statistik Data.
                         </a>
                     </li>
                 </ol>
