@@ -26,10 +26,10 @@
                 <h2 class="text-xl font-bold">SIMANGGIS</h2>
                 <ul class="mt-6 space-y-2">
                     <li><a href="{{ route('dashboard') }}" class="block py-2 px-4 rounded hover:bg-gray-700">Dashboard</a></li>
-                    <li><a href="{{ route('sekolah.index') }}" class="block py-2 px-4 rounded hover:bg-gray-700">Data Sekolah</a></li>
-                    <li><a href="{{ route('kelas.index') }}" class="block py-2 px-4 rounded hover:bg-gray-700">Data Kelas</a></li>
-                    <li><a href="{{ route('guru.index') }}" class="block py-2 px-4 rounded hover:bg-gray-700">Data Guru</a></li>
-                    <li><a href="{{ route('siswa.index') }}" class="block py-2 px-4 rounded hover:bg-gray-700">Data Siswa</a></li>
+                    <li><a href="{{ route('school.data') }}" class="block py-2 px-4 rounded hover:bg-gray-700">Data Sekolah</a></li>
+                    <li><a href="{{ route('class') }}" class="block py-2 px-4 rounded hover:bg-gray-700">Data Kelas</a></li>
+                    <li><a href="{{ route('teachers') }}" class="block py-2 px-4 rounded hover:bg-gray-700">Data Guru</a></li>
+                    <li><a href="{{ route('students') }}" class="block py-2 px-4 rounded hover:bg-gray-700">Data Siswa</a></li>
                     <li><a href="{{ route('distribusi.index') }}" class="block py-2 px-4 rounded hover:bg-gray-700">Data Distribusi</a></li>
                 </ul>
             </div>
