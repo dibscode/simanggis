@@ -95,6 +95,7 @@ Route::middleware(['auth', 'checkRole:admin,operator'])->prefix('meals')->group(
     Route::post('/create', [MealDistributionController::class, 'store'])->name('meals.store');
 });
 
+
 // -----------------------------
 // Auth scaffolding routes
 // -----------------------------
