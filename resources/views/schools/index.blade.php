@@ -22,27 +22,29 @@
         </nav>
     </div>
 
-    <div class="bg-white rounded shadow p-6">
-        <h2 class="text-2xl font-bold mb-4">Profil Sekolah</h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-                <p class="text-gray-600">Nama Sekolah:</p>
-                <p class="font-semibold text-gray-900">{{ $school->school_name }}</p>
-            </div>
-            <div>
-                <p class="text-gray-600">Alamat:</p>
-                <p class="font-semibold text-gray-900">{{ $school->address }}</p>
-            </div>
-            <div>
-                <p class="text-gray-600">Nomor Kontak:</p>
-                <p class="font-semibold text-gray-900">{{ $school->contact_number }}</p>
-            </div>
-        </div>
+    <div class="p-4 overflow-x-auto bg-white rounded shadow">
+        <h2 class="mb-4 text-2xl font-bold">Profil Sekolah</h2>
+        <table class="min-w-full text-left table-auto">
+            <tbody>
+                <tr>
+                    <th class="w-1/4 px-4 py-2 bg-gray-100 border">Nama Sekolah</th>
+                    <td class="px-4 py-2 border">{{ $school->school_name }}</td>
+                </tr>
+                <tr>
+                    <th class="px-4 py-2 bg-gray-100 border">Alamat</th>
+                    <td class="px-4 py-2 border">{{ $school->address }}</td>
+                </tr>
+                <tr>
+                    <th class="px-4 py-2 bg-gray-100 border">Nomor Kontak</th>
+                    <td class="px-4 py-2 border">{{ $school->contact_number }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
         <div class="mt-6">
             <a href="{{ route('school.detail') }}"
-               class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+               class="px-4 py-2 text-white bg-blue-600 rounded hover:bg-blue-700">
                 Edit Informasi
             </a>
         </div>

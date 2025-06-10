@@ -57,7 +57,7 @@ class ClassesController extends Controller
             'description' => $request->description,
         ]);
 
-        return redirect()->route('class')->with('success', 'Kelas berhasil ditambahkan.');
+        return redirect()->route('class')->with('success', 'Class added successfully!');
     }
 
 
@@ -105,7 +105,7 @@ class ClassesController extends Controller
 
         return redirect()
             ->route('class')
-            ->with('success', "Kelas '{$class->class_name}' berhasil diupdate.");
+            ->with('success', "Class '{$class->class_name}' updated successfully!");
     }
 
 
@@ -117,6 +117,6 @@ class ClassesController extends Controller
         $class = Classes::findOrFail($id);
         $class->delete();
 
-        return redirect()->route('class')->with('success', 'Kelas berhasil dihapus.');
+        return redirect()->route('class')->with('success', 'Class deleted successfully!');
     }
 }

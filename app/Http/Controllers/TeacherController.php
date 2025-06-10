@@ -96,6 +96,6 @@ class TeacherController extends Controller
     {
         $user = User::findOrFail($id);
         $user->delete();
-        return redirect()->route('teachers')->with('success', 'teacher deleted successfully.');
+        return redirect()->route('teachers')->with('success', 'Teacher deleted successfully!');
     }
 }

@@ -37,7 +37,7 @@ class StudentController extends Controller
             'class_id' => $request->class_id,
             'name' => $request->name
         ]);
-        return redirect()->route('students')->with('success', 'Student created successfully.');
+        return redirect()->route('students')->with('success', 'Student created successfully!');
     }
 
    public function edit($id)
@@ -60,14 +60,14 @@ class StudentController extends Controller
             'class_id' => $request->class_id,
             'school_id' => Auth::user()->school_id, // pastikan selalu sesuai user login
         ]);
-        return redirect()->route('students')->with('success', 'Student updated successfully.');
+        return redirect()->route('students')->with('success', 'Student updated successfully!');
     }
 
     public function destroy($id)
     {
         $student = Student::findOrFail($id);
         $student->delete();
-        return redirect()->route('students')->with('success', 'Student deleted successfully.');
+        return redirect()->route('students')->with('success', 'Student deleted successfully!');
     }
     public function show($id)
     {

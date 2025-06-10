@@ -11,27 +11,28 @@
         </div>
     @endif
 
-    <div class="overflow-x-auto bg-white rounded-lg shadow">
-        <table class="min-w-full text-sm divide-y divide-gray-200">
-            <thead class="bg-gray-50">
-                <tr>
-                    <th class="px-6 py-3 font-semibold text-left text-gray-700">Tanggal</th>
-                    <th class="px-6 py-3 font-semibold text-left text-gray-700">Kelas</th>
-                    <th class="px-6 py-3 font-semibold text-left text-gray-700">Sudah Menerima</th>
-                    <th class="px-6 py-3 font-semibold text-left text-gray-700">Belum Menerima</th>
-                    <th class="px-6 py-3 font-semibold text-left text-gray-700">Aksi</th>
+    <div class="p-4 overflow-x-auto bg-white rounded shadow">
+        <table class="min-w-full text-left table-auto">
+            <thead>
+                <tr class="bg-gray-100">
+                    <th class="px-6 py-2">Tanggal</th>
+                    <th class="px-6 py-2">Kelas</th>
+                    <th class="px-6 py-2">Sudah Terima</th>
+                    <th class="px-6 py-2">Belum Terima</th>
+                    <th class="px-6 py-2">Aksi</th>
                 </tr>
             </thead>
-            <tbody class="bg-white divide-y divide-gray-200">
+            </thead>
+            <tbody>
                 @forelse($rekap as $data)
-                    <tr>
-                        <td class="px-6 py-4">{{ \Carbon\Carbon::parse($data->meal_date)->format('d M Y') }}</td>
-                        <td class="px-6 py-4">{{ $data->class->class_name ?? 'Tidak diketahui' }}</td>
-                        <td class="px-6 py-4 font-medium text-green-600">{{ $data->received }}</td>
-                        <td class="px-6 py-4 font-medium text-red-600">{{ $data->not_received }}</td>
-                        <td class="px-6 py-4">
+                    <tr class="transition hover:bg-gray-50">
+                        <td class="px-6 py-4 border-b">{{ \Carbon\Carbon::parse($data->meal_date)->format('d M Y') }}</td>
+                        <td class="px-6 py-4 border-b">{{ $data->class->class_name ?? 'Tidak diketahui' }}</td>
+                        <td class="px-6 py-4 font-medium text-green-600 border-b">{{ $data->received }}</td>
+                        <td class="px-6 py-4 font-medium text-red-600 border-b">{{ $data->not_received }}</td>
+                        <td class="px-6 py-4 border-b">
                             <a href="{{ route('meal_check.absen', ['class_id' => $data->class->class_id, 'meal_date' => $data->meal_date]) }}"
-                               class="inline-block px-4 py-2 text-sm text-white bg-blue-600 rounded hover:bg-blue-700">
+                               class="inline-block px-4 py-2 text-sm text-white transition bg-blue-600 rounded hover:bg-blue-700">
                                 Isi Absensi
                             </a>
                         </td>
